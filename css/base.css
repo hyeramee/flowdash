@@ -28,31 +28,52 @@
   --overlay-bg: var(--color-black-40);
   --card-bg: var(--color-white);
 
-  /* 피그마에서 정한 글자 크기들 (rem 단위 통일) */
-  --text-size-28: 1.75rem; /* 큰 제목 (28px) */
-  --text-size-16: 1rem; /* 일반 본문 (16px) */
-  --text-size-12: 0.75rem; /* 작은 안내문 (12px에 가까운 0.75rem으로 추천) */
+  --font-size-xs: var(--space-12);
+  --font-size-md: var(--space-14);
+  --font-size-lg: var(--space-16);
+  --font-size-xl: var(--space-18);
+  --font-size-2xl: var(--space-24);
+  --font-size-3xl: var(--space-28);
+  --font-size-4xl: var(--space-32);
 
-  /* 둥글기 토큰 예시 */
-  --radius-3: 0.19rem; /* 작은 박스/버튼 둥글기 (약 3px) */
-  --radius-12: 0.75rem; /* 보통 버튼이나 카드 (12px) */
-  --radius-16: 1rem; /* 큰 박스 둥글기 (16px) */
+  /* 둥글기 토큰 */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-circle: 100px;
 
   /* 자주 쓰는 레이아웃 간격 토큰 예시 */
+  --space-6: 0.37rem; /* 6px */
   --space-8: 0.5rem; /* 8px */
+  --space-12: 0.75rem; /* 12px */
+  --space-14: 0.87rem; /* 14px */
   --space-16: 1rem; /* 16px */
+  --space-20: 1.25rem; /* 20px */
   --space-24: 1.5rem; /* 24px */
+  --space-28: 1.75rem; /* 28px */
+  --space-32: 2rem; /* 32px */
+  --space-40: 2.5rem; /* 40px */
+  --space-48: 3rem; /* 48px */
 
-  --gap-xs: var(--space-8); /* 8px: 아이콘과 텍스트 사이, 작은 버튼끼리의 간격 */
-  --gap-md: var(--space-16); /* 16px: 글 본문 문단 사이, 일반적인 간격 */
-  --gap-lg: var(--space-24); /* 24px: 큰 컴포넌트나 섹션 간의 넓은 간격 */
+  --gap-xxxxs: var(--space-6); /* 6px  */
+  --gap-xs: var(--space-8); /* 8px  */
+  --gap-xs-2: var(--space-12); /* 12px */
+  --gap-sm: var(--space-14); /* 14px */
+  --gap-md: var(--space-16); /* 16px */
+  --gap-md-2: var(--space-20); /* 20px */
+  --gap-lg: var(--space-24); /* 24px */
+  --gap-xl: var(--space-28); /* 28px */
+  --gap-xxl: var(--space-32); /* 32px */
+  --gap-xxxl: var(--space-40); /* 40px */
+  --gap-max: var(--space-48); /* 48px */
 }
 
 /* 2. 화면 전체에 기본 규칙 적용하기 (레이아웃 기본값) */
 body {
   background-color: var(--bg-muted);
   color: var(--text-main);
-  font-size: var(--text-size-16);
+  font-size: var(--font-size-lg);
   line-height: 1.5;
   margin: 0;
   font-family:
@@ -118,9 +139,45 @@ body {
   display: flex;
 }
 
-.flex.center {
+.flex.row.center {
   justify-content: center;
   align-items: center;
+}
+
+.flex.row.left {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex.row.right {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-col.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col.left {
+  align-items: flex-start;
+}
+
+.flex-col.right {
+  align-items: flex-end;
+}
+
+.flex-col.top {
+  justify-content: flex-start;
+}
+
+.flex-col.bottom {
+  justify-content: flex-end;
 }
 
 .grid-layout {
