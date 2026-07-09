@@ -1,0 +1,54 @@
+/* controls css */
+
+.controls {
+  width: 100%;
+  padding: var(--gap-md-2) var(--gap-xl);
+  gap: var(--gap-lg);
+  background-color: var(--card-bg);
+  border-radius: var(--radius-xl);
+}
+
+.controls-toolbar {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.filter {
+  width: 100%;
+  min-width: 0;
+  padding: var(--gap-md);
+  padding-right: 44px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.search-box {
+  justify-content: space-between;
+  grid-column: 1 / -1;
+  padding-right: var(--gap-md);
+}
+
+.sort-btn {
+  grid-column: 1 / -1;
+  padding: var(--gap-xs-2) var(--gap-md-2);
+  border-radius: var(--radius-circle);
+  border: 1px solid var(--border-light);
+}
+
+.add-btn {
+  padding: var(--gap-xs-2) var(--gap-lg);
+  border-radius: var(--radius-md);
+  background-color: var(--btn-bg);
+  color: var(--text-white);
+}
+
+select{
+  appearance: none;
+  font-size: var(--font-size-md);
+
+  background-image: url("../../assets/icons/select-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+
+  padding-right: 44px;
+}
