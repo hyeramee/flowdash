@@ -87,12 +87,12 @@ body {
 }
 
 /* 3. 웹사이트 콘텐츠가 들어갈 가운데 정렬 상자 */
-.container {
-  max-width: 75rem; /* 1200px -> 75rem으로 변환 (1200 / 16) */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem; /* 20px -> 1.25rem으로 변환 (20 / 16) */
-  padding-right: 1.25rem; /* 20px -> 1.25rem으로 변환 (20 / 16) */
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--gap-md);
+  gap: var(--gap-xxl);
 }
 
 /* 변형(위치이동)과 그림자가 0.3초 동안 부드럽게 일어나도록 설정 */
