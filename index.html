@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/components/board.css" />
   <link rel="stylesheet" href="css/components/card.css" />
-  <link rel="stylesheet" href="css/components/modal.css" />
   <link rel="stylesheet" href="css/components/controls.css" />
+  <link rel="stylesheet" href="css/components/modal.css" />
   <script type="module" src="js/main.js" defer></script>
 </head>
 
@@ -196,33 +196,35 @@
   <div id="modal-root" class="modal-overlay hidden">
     <!-- 할 일 등록/수정 폼 모달 -->
     <div class="modal modal-form hidden" role="dialog" aria-modal="true" aria-labelledby="todo-modal-title">
-      <h2 id="todo-modal-title" class="modal__title">새 할 일</h2>
-      <form class="modal__form">
-        <label class="modal__label">
+      <h2 id="todo-modal-title" class="modal-title">새 할 일</h2>
+      <form class="modal--form">
+        <label class="modal-label">
           제목 *
-          <input class="modal__input" type="text" name="title" required placeholder="무엇을 해야 하나요?" />
+          <input class="modal-input" type="text" name="title" required placeholder="무엇을 해야 하나요?" />
         </label>
-        <label class="modal__label">
+        <label class="modal-label">
           내용
-          <textarea class="modal__textarea" name="content" rows="3" placeholder="상세 내용을 입력하세요..."></textarea>
+          <textarea class="modal-textarea" name="content" rows="6" placeholder="상세 내용을 입력하세요..."></textarea>
         </label>
 
-        <div class="modal__check">
-          <fieldset class="modal__priority">
-            <legend class="modal__label">우선순위</legend>
-            <label>
-              <input type="radio" name="priority" id="priority-high" value="high" />높음
-            </label>
-            <label>
-              <input type="radio" name="priority" id="priority-mid" value="mid" checked />중간
-            </label>
-            <label>
-              <input type="radio" name="priority" id="priority-low" value="low" />낮음
-            </label>
+        <div class="modal-check flex">
+          <fieldset class="modal-priority">
+            <legend class="modal-label">우선순위</legend>
+            <div class="priority-wrap">
+              <label>
+                <input type="radio" name="priority" id="priority-high" value="high" />높음
+              </label>
+              <label>
+                <input type="radio" name="priority" id="priority-mid" value="mid" checked />중간
+              </label>
+              <label>
+                <input type="radio" name="priority" id="priority-low" value="low" />낮음
+              </label>
+            </div>
           </fieldset>
 
-          <label class="modal__label">상태
-            <select class="modal__select" name="status">
+          <label class="modal-label">상태
+            <select class="modal-select" name="status">
               <option value="todo" selected>할 일</option>
               <option value="doing">진행 중</option>
               <option value="done">완료</option>
@@ -230,7 +232,7 @@
           </label>
         </div>
 
-        <div class="modal__actions">
+        <div class="modal-actions flex row right">
           <button type="button" data-action="close-modal">취소</button>
           <button type="submit">저장하기</button>
         </div>
@@ -239,10 +241,10 @@
 
     <!-- 삭제 확인 모달 -->
     <div class="modal modal-confirm hidden" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title">
-      <h2 id="confirm-modal-title" class="modal__title">할 일 삭제</h2>
+      <h2 id="confirm-modal-title" class="modal-title">할 일 삭제</h2>
       <p>이 할일을 정말로 삭제하겠습니까?</p>
       <p>삭제된 할 일은 복구할 수 없습니다.</p>
-      <div class="modal__actions">
+      <div class="modal-actions flex row right">
         <button type="button" data-action="close-modal">취소</button>
         <button type="button" data-action="delete-modal">삭제</button>
       </div>
