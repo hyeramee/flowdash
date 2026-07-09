@@ -1,0 +1,64 @@
+/* modal css */
+
+.hidden {
+  display: none;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--overlay-bg, rgba(0, 0, 0, 0.40));
+}
+
+.modal {
+  background-color: var(--card-bg, #fff);
+  padding: var(--gap-xxl);
+  border-radius: var(--radius-xl);
+}
+
+.modal:first-child {
+  margin-bottom: 40px;
+}
+
+.modal-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: var(--gap-md);
+}
+
+input,
+textarea {
+  display: block;
+}
+
+.modal-label {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.modal-input,
+.modal-textarea {
+  width: 100%;
+  padding: var(--gap-xs) var(--gap-md);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  margin-top: var(--gap-xs);
+}
+
+.modal-input {
+  margin-bottom: var(--gap-lg);
+}
+
+.modal-textarea {
+  resize: none;
+  margin-bottom: var(--gap-xxl);
+}
+
+.modal-check {
+  gap: var(--gap-md);
+  margin-bottom: var(--gap-max);
+}
+
+
