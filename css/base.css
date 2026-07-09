@@ -48,6 +48,7 @@
   --radius-circle: 100px;
 
   /* 자주 쓰는 레이아웃 간격 토큰 예시 */
+  --space-4: 0.25rem; /*4px*/
   --space-6: 0.37rem; /* 6px */
   --space-8: 0.5rem; /* 8px */
   --space-12: 0.75rem; /* 12px */
@@ -60,7 +61,8 @@
   --space-40: 2.5rem; /* 40px */
   --space-48: 3rem; /* 48px */
 
-  --gap-xxxxs: var(--space-6); /* 6px  */
+  --gap-xxxs: var(--space-4); /* 4px */
+  --gap-xxs: var(--space-6); /* 6px  */
   --gap-xs: var(--space-8); /* 8px  */
   --gap-xs-2: var(--space-12); /* 12px */
   --gap-sm: var(--space-14); /* 14px */
