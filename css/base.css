@@ -1,19 +1,14 @@
-/* 모든 태그의 마진/패딩을 초기화하고, 테두리(border)까지 크기에 포함되도록 설정 */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 /* 1. 별명 등록하기 (디자인 토큰) */
 :root {
   /* 피그마에서 정한 색상들 */
-  --bg-main: #e0e5eb; /* 배경색 */
-  --text-main: #1b2432; /* 기본 글자색 */
-  --text-muted: #5c6f8a; /* 흐린 글자색 */
-  --color-point: #2e39b8; /* 포인트/강조 색상 */
+
+  --color-azure-15: #1b2432;
+  --color-blue-60: #5f42f0;
+  --color-azure-45: #5c6f8a;
+  --color-blue-45: #2e39b8;
+  --color-azure-90: #e0e5eb;
+  --color-red-50: #c33;
+  --color-azure-45: #5c6f8a;
   --color-red-65: #f25a5a;
   --color-orange-55: #f49d25;
   --color-spring-green-40: #29a366;
@@ -60,27 +55,6 @@ body {
   margin-right: auto;
   padding-left: 1.25rem; /* 20px -> 1.25rem으로 변환 (20 / 16) */
   padding-right: 1.25rem; /* 20px -> 1.25rem으로 변환 (20 / 16) */
-}
-
-/*a 태그의 밑줄과 파란색 글씨를 없애고 기본 글자색을 따라가게 만듭니다*/
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/*이미지가 부모 상자 밖으로 삐져나가지 않게 반응형 기본 옵션을 줍니다.*/
-img,
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-/* 버튼에 마우스 올렸을 때 손가락 모양(pointer)이 나오도록 설정 */
-button {
-  cursor: pointer;
-  background: none;
-  border: none;
 }
 
 /* 변형(위치이동)과 그림자가 0.3초 동안 부드럽게 일어나도록 설정 */
