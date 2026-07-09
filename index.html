@@ -72,10 +72,10 @@
     <!-- ================================================ -->
     <!-- D팀원 담당: 컨트롤 (검색 / 필터 / 정렬 / 추가)     -->
     <!-- ================================================ -->
-    <div class="toolbar">
+    <div class="controls">
       <!-- 검색창 -->
       <div class="search-box">
-        <input type="text" placeholder="검색" />
+        <input type="text" placeholder="할 일 검색..." />
         <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
           fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
@@ -83,26 +83,26 @@
         </svg>
       </div>
 
-      <!-- 상태 필터 -->
-      <select>
-        <option>전체</option>
-        <option>진행중</option>
-        <option>완료</option>
+      <!-- 기간 필터 -->
+      <select class="filter period-filter" name="period">
+        <option id="period-all" value="all">전체 기간</option>
+        <option id="period-today" value="today">오늘</option>
+        <option id="period-recently" value="recently">최근 7일</option>
       </select>
 
       <!-- 우선순위 필터 -->
-      <select>
-        <option>우선순위</option>
-        <option>높음</option>
-        <option>보통</option>
-        <option>낮음</option>
+      <select class="filter priority-filter" name="priority">
+        <option id="priority-all" value="all">전체 우선순위</option>
+        <option id="filter-priority-high" value="high">높음</option>
+        <option id="filter-priority-mid" value="mid">중간</option>
+        <option id="filter-priority-low" value="low">낮음</option>
       </select>
 
       <!-- 정렬 토글 -->
-      <button class="sort-btn">정렬: 오름차순 ↑</button>
+      <button type="button" class="sort-btn">정렬: 오름차순 ↑</button>
 
       <!-- 할 일 추가 -->
-      <button class="add-btn">+ 새 할 일</button>
+      <button type="button" class="add-btn">+ 새 할 일</button>
     </div>
     <!-- // D팀원 담당 끝 -->
 
