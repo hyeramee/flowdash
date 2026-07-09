@@ -83,53 +83,43 @@
         </div>
       </section>
 
-      <!-- ================================================ -->
-      <!-- D팀원 담당: 컨트롤 (검색 / 필터 / 정렬 / 추가)     -->
-      <!-- ================================================ -->
-      <div class="toolbar">
-        <!-- 검색창 -->
-        <div class="search-box">
-          <input type="text" placeholder="검색" />
-          <svg
-            class="search-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="gray"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </div>
-
-        <!-- 상태 필터 -->
-        <select>
-          <option>전체</option>
-          <option>진행중</option>
-          <option>완료</option>
-        </select>
-
-        <!-- 우선순위 필터 -->
-        <select>
-          <option>우선순위</option>
-          <option>높음</option>
-          <option>보통</option>
-          <option>낮음</option>
-        </select>
-
-        <!-- 정렬 토글 -->
-        <button class="sort-btn">정렬: 오름차순 ↑</button>
-
-        <!-- 할 일 추가 -->
-        <button class="add-btn">+ 새 할 일</button>
+<!-- ================================================ -->
+    <!-- D팀원 담당: 컨트롤 (검색 / 필터 / 정렬 / 추가)     -->
+    <!-- ================================================ -->
+    <div class="controls">
+      <!-- 검색창 -->
+      <div class="search-box">
+        <input type="text" placeholder="할 일 검색..." />
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+          fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
       </div>
-      <!-- // D팀원 담당 끝 -->
 
+      <!-- 기간 필터 -->
+      <select class="filter period-filter" name="period">
+        <option value="all">전체 기간</option>
+        <option value="today">오늘</option>
+        <option value="recently">최근 7일</option>
+      </select>
+
+      <!-- 우선순위 필터 -->
+      <select class="filter priority-filter" name="priority">
+        <option value="all">전체 우선순위</option>
+        <option value="high">높음</option>
+        <option value="mid">중간</option>
+        <option value="low">낮음</option>
+      </select>
+
+      <!-- 정렬 토글 -->
+      <button type="button" class="sort-btn">정렬: 오름차순 ↑</button>
+
+      <!-- 할 일 추가 -->
+      <button type="button" class="add-btn">+ 새 할 일</button>
+    </div>
+    <!-- // D팀원 담당 끝 -->
+      
       <!-- ================================================ -->
       <!-- A팀원 담당: 전체 초기화                            -->
       <!-- ================================================ -->
