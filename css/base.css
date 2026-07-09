@@ -12,6 +12,7 @@
   --color-orange-55: #f49d25;
   --color-spring-green-40: #29a366;
   --color-black-40: rgb(0 0 0 / 40%);
+  --color-black-2: rgb(0 0 0 / 2%);
   --color-white: #fff;
   --color-gray-10: #f5f5f5;
   /*이런식으로 피그마에서 지정된 색 추가 가능,
@@ -26,6 +27,7 @@
   --status-danger: var(--color-red-65); /* 에러, 위험 (밝은 빨강) */
   --status-danger-dark: var(--color-red-50); /* 에러 텍스트 또는 호버용 (짙은 빨강) */
   --overlay-bg: var(--color-black-40);
+  --board-bg: var(--color-black-2);
   --card-bg: var(--color-white);
 
   --font-size-xs: var(--space-12);
