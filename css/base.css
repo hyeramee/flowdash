@@ -8,7 +8,6 @@
   --color-blue-45: #2e39b8;
   --color-azure-90: #e0e5eb;
   --color-red-50: #c33;
-  --color-azure-45: #5c6f8a;
   --color-red-65: #f25a5a;
   --color-orange-55: #f49d25;
   --color-spring-green-40: #29a366;
@@ -33,8 +32,8 @@
 
 /* 2. 화면 전체에 기본 규칙 적용하기 (레이아웃 기본값) */
 body {
-  background-color: var(--bg-main);
-  color: var(--text-main);
+  background-color: var(--color-azure-90);
+  color: var(--color-azure-15);
   font-size: var(--text-size-16);
   line-height: 1.5;
   margin: 0;
