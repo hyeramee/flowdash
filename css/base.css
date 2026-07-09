@@ -1,4 +1,138 @@
-#board {
+/* 모든 태그의 마진/패딩을 초기화하고, 테두리(border)까지 크기에 포함되도록 설정 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1. 별명 등록하기 (디자인 토큰) */
+:root {
+  /* 피그마에서 정한 색상들 */
+  --bg-main: #e0e5eb; /* 배경색 */
+  --text-main: #1b2432; /* 기본 글자색 */
+  --text-muted: #5c6f8a; /* 흐린 글자색 */
+  --color-point: #2e39b8; /* 포인트/강조 색상 */
+  --color-red-65: #f25a5a;
+  --color-orange-55: #f49d25;
+  --color-spring-green-40: #29a366;
+  /*이런식으로 피그마에서 지정된 색 추가 가능,
+  color: var(--color-red-65); 이런식으로 사용 가능 */
+
+  /* 피그마에서 정한 글자 크기들 (rem 단위 통일) */
+  --text-size-28: 1.75rem; /* 큰 제목 (28px) */
+  --text-size-16: 1rem; /* 일반 본문 (16px) */
+  --text-size-12: 0.75rem; /* 작은 안내문 (12px에 가까운 0.75rem으로 추천) */
+
+  /* 둥글기 토큰 예시 */
+  --radius-3: 0.19rem; /* 작은 박스/버튼 둥글기 (약 3px) */
+  --radius-12: 0.75rem; /* 보통 버튼이나 카드 (12px) */
+  --radius-16: 1rem; /* 큰 박스 둥글기 (16px) */
+
+  /* 자주 쓰는 레이아웃 간격 토큰 예시 */
+  --space-8: 0.5rem; /* 8px */
+  --space-16: 1rem; /* 16px */
+  --space-24: 1.5rem; /* 24px */
+}
+
+/* 2. 화면 전체에 기본 규칙 적용하기 (레이아웃 기본값) */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-size: var(--text-size-16);
+  line-height: 1.5;
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Apple SD Gothic Neo',
+    'Noto Sans KR',
+    sans-serif;
+}
+
+/* 3. 웹사이트 콘텐츠가 들어갈 가운데 정렬 상자 */
+.container {
+  max-width: 75rem; /* 1200px -> 75rem으로 변환 (1200 / 16) */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem; /* 20px -> 1.25rem으로 변환 (20 / 16) */
+  padding-right: 1.25rem; /* 20px -> 1.25rem으로 변환 (20 / 16) */
+}
+
+/*a 태그의 밑줄과 파란색 글씨를 없애고 기본 글자색을 따라가게 만듭니다*/
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*이미지가 부모 상자 밖으로 삐져나가지 않게 반응형 기본 옵션을 줍니다.*/
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 버튼에 마우스 올렸을 때 손가락 모양(pointer)이 나오도록 설정 */
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* 변형(위치이동)과 그림자가 0.3초 동안 부드럽게 일어나도록 설정 */
+.hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px); /* 위로 살짝 슬라이스 (-4px 만큼 올리기) */
+
+  /* 마우스를 올렸을 때 부드럽게 깔리는 은은한 네이비/그레이 톤 그림자 효과 */
+  box-shadow:
+    0 10px 20px rgba(27, 36, 50, 0.12),
+    0 4px 8px rgba(27, 36, 50, 0.06);
+}
+
+.click-purple {
+  /* 기본 테두리선 (텍스트 무티드 색상 활용해서 연하게 설정) */
+  border: 2px solid var(--text-muted);
+  /* 테두리가 바뀔 때도 0.2초 동안 부드럽게 변하도록 설정 */
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* 1. 마우스로 꾹 클릭하고 있을 때 (:active) */
+/* 2. 탭(Tab) 키나 클릭으로 선택되어 초점이 맞춰졌을 때 (:focus) */
+.click-purple:active,
+.click-purple:focus,
+.click-purple:focus-within {
+  /* 브라우저가 기본으로 제공하는 지저분한 아웃라인은 지우기 */
+  outline: none;
+
+  /* 테두리 색상을 포인트 컬러로 변경 (동영상 보라색느낌 우선 이색으로 지정) */
+  border-color: var(--color-point);
+
+  /* 테두리 주변에 은은하게 보라색 빛이 감돌도록 그림자 효과 살짝 추가 */
+  box-shadow: 0 0 0 4px rgba(46, 57, 184, 0.15);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-layout {
   display: grid;
-  grid-template-columns: 1fr;
+  gap: 1rem;
 }
