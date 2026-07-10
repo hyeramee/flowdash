@@ -1,13 +1,20 @@
+/* =================================================== */
+/* E팀원 담당: 헤더                                   */
+/* =================================================== */
 section.header-top h1 {
   font-size: var(--text-size-28);
   font-weight: 700; /* 굵게 */
   color: var(--color-azure-15);
+  width: max-content; /* 글자 크기만큼만 가로폭 차지하기 */
+  white-space: nowrap; /* 글자가 밑으로 쪼개져서 줄바꿈되지 않게 고정 */
 }
 
 .header-top {
   background-color: var(--card-bg);
+  width: 100%;
+  padding: var(--gap-md-2) var(--gap-xl);
+  gap: var(--gap-lg);
   border-radius: var(--radius-lg);
-  padding: var(--space-24) var(--space-32);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,4 +28,33 @@ section.header-top h1 {
 
 .header-top svg {
   display: block;
+}
+
+.title-area {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-xs); /* 글자와 꽃 사이 간격 (8px) */
+}
+
+.header-top [data-stat='date'] time {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.header-top button {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 아이콘이 원 정중앙에 오도록 정렬 */
+
+  /* 모바일 기준 크기 (36px) 수정 해야함*/
+  width: var(--space-32);
+  height: var(--space-32);
+
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-circle);
+
+  color: var(--text-muted);
+  cursor: pointer;
 }
