@@ -7,16 +7,18 @@ import {
   saveNickname,
 } from './storage.js';
 
-const DEFAULT_THEME = 'light';
-const DEFAULT_NICKNAME = 'FlowDash';
+const defaultTheme = 'light';
+const defaultNickname = 'FlowDash';
 
 const initialTodos = loadTodos();
 
 let state = {
   todos: Array.isArray(initialTodos) ? initialTodos : [],
-  theme: loadTheme() || DEFAULT_THEME,
-  nickname: loadNickname() || DEFAULT_NICKNAME,
+  theme: loadTheme() || defaultTheme,
+  nickname: loadNickname() || defaultNickname,
   // 기간/우선순위 필터, 검색어, 정렬 순서는 LocalStorage에 저장하지 않음 — 새로고침 시 항상 기본값
+  // config.js 만들 때 참고: priority/period/sortOrder를 상수명으로 그대로 쓰면
+  // 여기 filters 필드명과 겹쳐서 헷갈림 (예: priorityOptions처럼 접미사 권장)
   filters: {
     period: 'all',
     priority: 'all',
