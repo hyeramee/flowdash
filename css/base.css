@@ -190,3 +190,33 @@ body {
   display: grid;
   gap: var(--gap-md);
 }
+
+/* 4. 컨트롤바 하단 (정렬 표시 + 전체 초기화)
+  #controls-bottom은 .controls(D 담당 controls.css)의 자식이 아니라 형제 요소라서
+   특정 컴포넌트 파일 소속이 아님. #app 같은 페이지 레벨 요소를 다루는 base.css로 분류함 */
+#controls-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.sort-label {
+  padding: var(--gap-xxxs) var(--gap-md);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-circle);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.sort-value {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.reset-btn {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--status-danger-dark);
+}
