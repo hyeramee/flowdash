@@ -192,8 +192,7 @@ body {
 }
 
 /* 4. 컨트롤바 하단 (정렬 표시 + 전체 초기화)
-  #controls-bottom은 .controls(D 담당 controls.css)의 자식이 아니라 형제 요소라서
-   특정 컴포넌트 파일 소속이 아님. #app 같은 페이지 레벨 요소를 다루는 base.css로 분류함 */
+  파일 소속이 없어 base.css로 분류함 */
 #controls-bottom {
   display: flex;
   justify-content: space-between;
@@ -202,11 +201,11 @@ body {
 }
 
 .sort-label {
-  padding: var(--gap-xxxs) var(--gap-md);
+  padding: var(--gap-xs) var(--gap-xs-2);
   background-color: var(--card-bg);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-circle);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-md);
   color: var(--text-muted);
 }
 
@@ -216,7 +215,17 @@ body {
 }
 
 .reset-btn {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-md);
   font-weight: 700;
   color: var(--status-danger-dark);
+}
+
+/* 5. 푸터 */
+#footer {
+  width: 100%;
+  padding: var(--gap-md) 0;
+  border-top: 0.6px solid var(--text-muted);
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
 }

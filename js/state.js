@@ -10,6 +10,13 @@ import {
 const defaultTheme = 'light';
 const defaultNickname = 'FlowDash';
 
+const defaultFilters = {
+  period: 'all',
+  priority: 'all',
+  search: '',
+  sortOrder: 'asc',
+};
+
 const initialTodos = loadTodos();
 
 let state = {
@@ -17,18 +24,12 @@ let state = {
   theme: loadTheme() || defaultTheme,
   nickname: loadNickname() || defaultNickname,
   // 기간/우선순위 필터, 검색어, 정렬 순서는 LocalStorage에 저장하지 않음 — 새로고침 시 항상 기본값
-  // config.js 만들 때 참고: priority/period/sortOrder를 상수명으로 그대로 쓰면
-  // 여기 filters 필드명과 겹쳐서 헷갈림 (예: priorityOptions처럼 접미사 권장)
-  filters: {
-    period: 'all',
-    priority: 'all',
-    search: '',
-    sortOrder: 'asc',
-  },
+  filters: { ...defaultFilters },
 };
 
 const listeners = new Set();
 
+// 주의: getState()가 돌려주는 객체는 직접 수정하지 말고, setState()로만 바꿀 것
 export function getState() {
   return state;
 }
@@ -38,13 +39,13 @@ export function getState() {
 export function setState(patch) {
   state = { ...state, ...patch };
 
-  if (Object.prototype.hasOwnProperty.call(patch, 'todos')) {
+  if (Object.hasOwn(patch, 'todos')) {
     saveTodos(state.todos);
   }
-  if (Object.prototype.hasOwnProperty.call(patch, 'theme')) {
+  if (Object.hasOwn(patch, 'theme')) {
     saveTheme(state.theme);
   }
-  if (Object.prototype.hasOwnProperty.call(patch, 'nickname')) {
+  if (Object.hasOwn(patch, 'nickname')) {
     saveNickname(state.nickname);
   }
 
@@ -57,5 +58,5 @@ export function subscribe(listener) {
 }
 
 export function resetTodos() {
-  setState({ todos: [] });
+  setState({ todos: [], filters: { ...defaultFilters } });
 }
