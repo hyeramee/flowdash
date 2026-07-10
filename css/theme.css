@@ -2,11 +2,9 @@
 /* E팀원 담당: 헤더                                   */
 /* =================================================== */
 section.header-top h1 {
-  font-size: var(--text-size-28);
+  font-size: var(--font-size-3xl);
   font-weight: 700; /* 굵게 */
-  color: var(--color-azure-15);
-  width: max-content; /* 글자 크기만큼만 가로폭 차지하기 */
-  white-space: nowrap; /* 글자가 밑으로 쪼개져서 줄바꿈되지 않게 고정 */
+  color: var(--text-main);
 }
 
 .header-top {
@@ -23,7 +21,7 @@ section.header-top h1 {
 
 .header-top span {
   color: var(--text-primary);
-  font-size: var(--text-size-28);
+  font-size: var(--font-size-3xl);
 }
 
 .header-top svg {
@@ -45,16 +43,14 @@ section.header-top h1 {
 .header-top button {
   display: flex;
   align-items: center;
-  justify-content: center; /* 아이콘이 원 정중앙에 오도록 정렬 */
+  justify-content: center;
 
-  /* 모바일 기준 크기 (36px) 수정 해야함*/
-  width: var(--space-32);
-  height: var(--space-32);
+  width: var(--gap-xxl);
+  height: var(--gap-xxl);
 
   background-color: var(--card-bg);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-circle);
 
   color: var(--text-muted);
-  cursor: pointer;
 }
