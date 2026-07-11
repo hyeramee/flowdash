@@ -5,7 +5,8 @@
   font-size: var(--font-size-2xl);
   font-weight: 700; /* 굵게 */
   color: var(--text-main);
-  display: inline;
+  display: inline-block;
+  width: 100%;
   line-height: 1.3;
 }
 
@@ -13,18 +14,21 @@
   color: var(--text-primary);
   font-size: var(--font-size-2xl);
   font-weight: 700; /* 굵게 */
-  display: inline-block;
+  display: inline;
   border-style: none;
+}
+
+.no-wrap-group {
+  white-space: nowrap; /* 글자와 아이콘이 한 줄에 묶여서 떨어지게 함 */
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .title-area svg {
   display: inline-block;
   vertical-align: middle;
 }
-
-/* .header-top svg {
-  display: block;
-} */
 
 .header-top [data-stat='date'] time {
   font-size: var(--font-size-xs);
@@ -35,7 +39,7 @@
 .header-top {
   background-color: var(--card-bg);
   width: 100%;
-  padding: var(--gap-md-2) var(--gap-xl);
+  padding: var(--gap-md-2) var(--gap-xs-2);
   gap: var(--gap-lg);
   border-radius: var(--radius-lg);
   display: flex;
@@ -44,8 +48,9 @@
 }
 
 .title-area {
-  display: block;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: var(--gap-xs); /* 글자와 꽃 사이 간격 (8px) */
 }
 
