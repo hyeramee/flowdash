@@ -66,23 +66,23 @@
       </section>
 
       <section class="stats-grid">
-        <div>
+        <div class="hover-lift">
           <h2>Total Tasks</h2>
           <p data-stat="total">0</p>
         </div>
-        <div>
+        <div class="hover-lift">
           <h2>To Do</h2>
           <p data-stat="todo">0</p>
         </div>
-        <div>
+        <div class="hover-lift">
           <h2>In Progress</h2>
           <p data-stat="progress">0</p>
         </div>
-        <div>
+        <div class="hover-lift">
           <h2>Done</h2>
           <p data-stat="done">0</p>
         </div>
-        <div>
+        <div class="hover-lift">
           <h2>Achievement</h2>
           <p data-stat="achievement">0%</p>
         </div>
@@ -94,7 +94,7 @@
       <div class="controls flex-col">
         <div class="controls-toolbar grid-layout">
           <!-- 검색창 -->
-          <div class="search-box filter flex">
+          <div class="search-box filter flex click-purple">
             <input type="text" id="search" name="search" placeholder="할 일 검색..." />
             <svg
               class="search-icon"
@@ -114,14 +114,14 @@
           </div>
 
           <!-- 기간 필터 -->
-          <select class="filter period-filter" name="period">
+          <select class="filter period-filter click-purple" name="period">
             <option value="all">전체 기간</option>
             <option value="today">오늘</option>
             <option value="recently">최근 7일</option>
           </select>
 
           <!-- 우선순위 필터 -->
-          <select class="filter priority-filter" name="priority">
+          <select class="filter priority-filter click-purple" name="priority">
             <option value="all">전체 우선순위</option>
             <option value="high">높음</option>
             <option value="mid">중간</option>
@@ -129,11 +129,11 @@
           </select>
 
           <!-- 정렬 토글 -->
-          <button type="button" class="sort-btn">정렬: 오름차순 ↑</button>
+          <button type="button" class="sort-btn click-purple">정렬: 오름차순 ↑</button>
         </div>
 
         <!-- 할 일 추가 -->
-        <button type="button" class="add-btn">+ 새 할 일</button>
+        <button type="button" class="add-btn click-lift-pure">+ 새 할 일</button>
       </div>
       <!-- // D팀원 담당 끝 -->
 
