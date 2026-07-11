@@ -135,10 +135,22 @@ body {
   outline: none;
 
   /* 테두리 색상을 포인트 컬러로 변경 (동영상 보라색느낌 우선 이색으로 지정) */
-  border-color: var(--color-blue-45);
+  border: 2px solid var(--color-blue-45);
 
-  /* 테두리 주변에 은은하게 보라색 빛이 감돌도록 그림자 효과 살짝 추가 */
-  box-shadow: 0 0 0 4px rgba(46, 57, 184, 0.15);
+  /* 테두리 그림자 효과 삭제 */
+  box-shadow: none;
+}
+
+/* 클릭할 때 그림자 없이 위로만 살짝 들리는 공통 클래스 */
+.click-lift-pure {
+  /* 클릭했다가 뗄 때도 부드럽게 돌아오도록 애니메이션 지정 */
+  transition: transform 0.2s ease;
+}
+
+/* 마우스로 꾹 클릭하고 있는 순간 (:active) */
+.click-lift-pure:active {
+  /* 위쪽(Y축)으로 4px 만큼 슥 올라갑니다 */
+  transform: translateY(-4px);
 }
 
 .flex {
