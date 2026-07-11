@@ -14,6 +14,7 @@
   font-size: var(--font-size-2xl);
   font-weight: 700; /* 굵게 */
   display: inline-block;
+  border-style: none;
 }
 
 .title-area svg {
