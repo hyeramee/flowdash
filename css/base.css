@@ -178,6 +178,18 @@ select:focus-visible {
   box-shadow: none;
 }
 
+.controls .click-purple {
+  border: 2px solid transparent;
+  box-shadow: inset 0 0 0 1px var(--border-light);
+}
+
+.controls .click-purple:active,
+.controls .click-purple:focus,
+.controls .click-purple:focus-within {
+  border-color: var(--border-actice);
+  box-shadow: none;
+}
+
 /* 클릭할 때 그림자 없이 위로만 살짝 들리는 공통 클래스 */
 .click-lift-pure {
   /* 클릭했다가 뗄 때도 부드럽게 돌아오도록 애니메이션 지정 */
