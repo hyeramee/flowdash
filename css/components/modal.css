@@ -73,7 +73,7 @@ body.modal-open {
   margin-bottom: var(--gap-max);
 }
 
-.modal-check .modal-label:first-child{
+.modal-check .modal-label:first-child {
   margin-bottom: var(--gap-xs);
 }
 
@@ -109,31 +109,31 @@ body.modal-open {
   color: var(--text-priority-low);
 }
 
-#priority-high:checked + label[for="priority-high"] {
+#priority-high:checked+label[for="priority-high"] {
   color: var(--text-white);
   background-color: var(--text-priority-high);
 }
 
-#priority-mid:checked + label[for="priority-mid"] {
+#priority-mid:checked+label[for="priority-mid"] {
   color: var(--text-main);
   background-color: var(--text-priority-mid);
 }
 
-#priority-low:checked + label[for="priority-low"] {
+#priority-low:checked+label[for="priority-low"] {
   color: var(--text-white);
   background-color: var(--text-priority-low);
 }
 
 .modal-select {
   min-width: 0;
-  margin-bottom: var(--gap-xs); 
+  margin-bottom: var(--gap-xs);
 }
 
 .modal-priority {
   flex: 0 0 auto;
 }
 
-.modal-check > .modal-label {
+.modal-check>.modal-label {
   flex: 1 1 0;
   min-width: 0;
 }
@@ -151,12 +151,12 @@ body.modal-open {
   line-height: 1.5;
 }
 
-.modal-actions button:first-child:hover{
+.modal-actions button:first-child:hover {
   background-color: var(--bg-muted);
   color: var(--text-main);
 }
 
-.modal-form .modal-actions button:last-child{
+.modal-form .modal-actions button:last-child {
   background-color: var(--btn-bg);
   color: var(--text-white);
   padding: var(--gap-xs-2) var(--gap-lg);
@@ -171,12 +171,12 @@ body.modal-open {
   margin-bottom: var(--gap-maxim);
 }
 
-.modal-confirm .modal-actions button:last-child{
+.modal-confirm .modal-actions button:last-child {
   color: var(--status-danger);
   border: 1px solid var(--status-danger);
 }
 
-.modal-confirm .modal-actions button:last-child:hover{
+.modal-confirm .modal-actions button:last-child:hover {
   background-color: var(--status-danger-bg);
   color: var(--status-danger);
   border: 1px solid var(--status-danger);
