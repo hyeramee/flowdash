@@ -252,6 +252,15 @@ select:focus-visible {
   gap: var(--gap-md);
 }
 
+/* 레이아웃 */
+.header-top, .controls {
+  border: 1px solid var(--border-light);
+  background-color: var(--card-bg);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 5%);
+}
+
+
 /* 5. 푸터 */
 #footer {
   width: 100%;
