@@ -40,9 +40,8 @@
 .header-top {
   background-color: var(--card-bg);
   width: 100%;
-  padding: var(--gap-md-2) var(--gap-xs-2);
-  gap: var(--gap-lg);
-  border-radius: var(--radius-lg);
+  padding: var(--gap-lg) var(--gap-xxl);
+  border-radius: var(--radius-xl);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -79,5 +78,55 @@
 @media (max-width: 390px) {
   .header-br {
     display: block;
+  }
+}
+
+/* =================================================== */
+/* E팀원 담당: 달성률                                  */
+/* =================================================== */
+.stats-grid h2 {
+  font-size: var(--font-size-xl); /* 뒤쪽에 선언되었던 값(xs)으로 통합 */
+  color: var(--text-muted);
+  font-weight: 600;
+  line-height: 1.5;
+  word-break: keep-all; /* 중복 속성 제거 및 single화 */
+}
+
+.stats-grid p {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--text-main);
+  overflow: hidden;
+}
+
+.stats-grid {
+  width: 100%;
+  gap: var(--gap-xs-2);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stats-grid > div {
+  background-color: var(--card-bg);
+  padding: var(--gap-md-2);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+
+  /* 내부 텍스트 정렬을 위한 Flexbox */
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+  min-width: 0;
+}
+
+.stats-grid p[data-stat='achievement'] {
+  color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    /* 데스크톱에서는 5개 카드가 가로로 나란히 채워지도록 설정 */
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: var(--gap-lg);
   }
 }
