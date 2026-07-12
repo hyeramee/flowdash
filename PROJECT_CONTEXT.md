@@ -8,7 +8,7 @@
 
 ```js
 Todo {
-  id: Date.now() 또는 crypto.randomUUID() (유니크, 팀 합의 필요)
+  id: Date.now()
   title: string (필수)
   content: string (선택)
   status: 'todo' | 'doing' | 'done'
@@ -194,7 +194,7 @@ flowdash/
 **새로 정해야 하는 것**
 
 - state 함수명: `getState()` / `setState(patch)` / `subscribe(fn)`
-- id 생성 방식: `Date.now()` 대신 `crypto.randomUUID()` 권장 (충돌 방지)
+- id 생성 방식: `Date.now()` 사용하기로 결정
 - CSS 변수명: `--bg`, `--text`, `--primary`, `--card-bg` 등
 - 초기 로딩 규칙: 앱 시작 시 저장된 데이터 → 상태 반영 흐름
 - 자동저장 규칙: 상태 변경 시 자동으로 저장까지 연결 (각자 저장 함수 호출 불필요)
