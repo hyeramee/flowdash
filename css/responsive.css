@@ -1,0 +1,56 @@
+/* 반응형 - 모바일 퍼스트 */
+
+/* Tablet (768px ~ 1199px) */
+@media (min-width: 768px) {
+  /* 공통 영역 */
+  
+  
+  /* 헤더 영역 */
+
+  
+
+  /* 컨트롤 영역 */
+
+
+
+  /* 보드 영역 */
+
+
+
+  /* 모달 영역 */
+}
+
+/* Desktop (1200px 이상) */
+@media (min-width: 1200px) {
+  /* 공통 영역 */
+  
+  
+  /* 헤더 영역 */
+
+  
+
+  /* 컨트롤 영역 */
+  .controls {
+    flex-direction: row;
+  }
+
+  .add-btn {
+    flex: 1;
+  }
+
+  .controls-toolbar {
+    grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr));
+  }
+
+  .controls .search-box,
+  .controls .sort-btn {
+    grid-column: auto;
+  }
+
+
+  /* 보드 영역 */
+
+
+
+  /* 모달 영역 */
+}
