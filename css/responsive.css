@@ -18,12 +18,20 @@
 
 
   /* 모달 영역 */
+  .modal {
+    max-width: 500px;
+    margin: 20% auto;
+  }
+
 }
 
 /* Desktop (1200px 이상) */
 @media (min-width: 1200px) {
   /* 공통 영역 */
-  
+  #app {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   
   /* 헤더 영역 */
 
