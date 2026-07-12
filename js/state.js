@@ -6,15 +6,16 @@ import {
   loadNickname,
   saveNickname,
 } from './storage.js';
+import { PERIOD, SORT_ORDER, THEME, FILTER_ALL } from './constants.js';
 
-const defaultTheme = 'light';
+const defaultTheme = THEME.LIGHT;
 const defaultNickname = 'FlowDash';
 
 const defaultFilters = {
-  period: 'all',
-  priority: 'all',
+  period: PERIOD.ALL,
+  priority: FILTER_ALL,
   search: '',
-  sortOrder: 'asc',
+  sortOrder: SORT_ORDER.ASC,
 };
 
 const initialTodos = loadTodos();
