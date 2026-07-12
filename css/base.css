@@ -163,8 +163,8 @@ select:focus-visible {
     box-shadow 0.2s ease;
 }
 
-/* 1. 마우스로 꾹 클릭하고 있을 때 (:active) */
-/* 2. 탭(Tab) 키나 클릭으로 선택되어 초점이 맞춰졌을 때 (:focus) */
+/* 마우스로 꾹 클릭하고 있을 때 (:active) */
+/* 탭(Tab) 키나 클릭으로 선택되어 초점이 맞춰졌을 때 (:focus) */
 .click-purple:active,
 .click-purple:focus,
 .click-purple:focus-within {

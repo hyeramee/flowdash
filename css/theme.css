@@ -16,6 +16,7 @@
   font-weight: 700; /* 굵게 */
   display: inline;
   border-style: none;
+  border: 2px solid transparent;
 }
 
 .no-wrap-group {
@@ -65,6 +66,20 @@
   border: 1px solid var(--border-light);
   border-radius: var(--radius-circle);
   color: var(--text-muted);
+}
+
+/* ─── 반응형 레이아웃 ─── */
+
+/* 1. PC/태블릿 등 큰 화면에서는 줄바꿈 안 되게 숨김 */
+.header-br {
+  display: none;
+}
+
+/* 2. 모바일 화면(390px 이하)에서만 줄바꿈 켬 */
+@media (max-width: 390px) {
+  .header-br {
+    display: block;
+  }
 }
 
 /* =================================================== */
@@ -121,4 +136,22 @@
     padding: var(--gap-md-2) var(--gap-xl);
     gap: var(--gap-lg);
   }
+}
+
+/* =================================================== */
+/* E팀원 담당: 다크모드                              */
+/* =================================================== */
+
+body {
+  background-color: #ffffff; /* 흰색 배경 */
+  color: #333333; /* 짙은 회색 글자 */
+  transition:
+    background-color 0.3s,
+    color 0.3s; /* 색상이 부드럽게 바뀌는 효과 */
+}
+
+/* 2. 다크모드 스타일 (body에 dark 클래스가 붙었을 때) */
+body.dark {
+  background-color: #121212; /* 어두운 배경 */
+  color: #ffffff; /* 흰색 글자 */
 }
