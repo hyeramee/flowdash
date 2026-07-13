@@ -1,4 +1,4 @@
-/* 1. 별명 등록하기 (디자인 토큰) */
+/* 별명 등록하기 (디자인 토큰) */
 :root {
   /* 피그마에서 정한 색상들 */
 
@@ -108,7 +108,7 @@
   --gap-maxim: var(--space-64); /* 64px */
 }
 
-/* 2. 화면 전체에 기본 규칙 적용하기 (레이아웃 기본값) */
+/* 화면 전체에 기본 규칙 적용하기 (레이아웃 기본값) */
 body {
   background-color: var(--app-bg);
   color: var(--text-main);
@@ -125,7 +125,7 @@ body {
     sans-serif;
 }
 
-/* 3. 웹사이트 콘텐츠가 들어갈 가운데 정렬 상자 */
+/* 웹사이트 콘텐츠가 들어갈 가운데 정렬 상자 */
 #app {
   display: flex;
   flex-direction: column;
@@ -277,11 +277,23 @@ select:focus-visible {
   box-shadow: 0 1px 3px 0 var(--box-shadow-hover-layout);
 }
 
-/* 5. 푸터 */
+/* 푸터 */
 #footer {
   width: 100%;
   padding: var(--gap-md) 0;
   border-top: 1px solid var(--border-light);
   text-align: center;
   font-size: var(--font-size-xs);
+}
+
+/* 배경색, 글자색, 테두리색이 바뀔 때 0.3초 동안 부드럽게 애니메이션 */
+body,
+body *,
+.card,
+.sidebar,
+header {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
