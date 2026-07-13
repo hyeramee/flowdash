@@ -10,7 +10,7 @@
 
   padding: var(--gap-md-2);
   background-color: var(--card-bg, #ffffff);
-  border: 0.0625rem solid var(--border-light);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg, 0.5rem);
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.04);
   box-sizing: border-box;
@@ -25,11 +25,9 @@
   border: 1px solid transparent; /* 기본 테두리 설정 (필요시 수정) */
 }
 
-.card:hover {
-  /* 기존 테두리 컬러 효과 */
+.card:hover,
+.card:active {
   border-color: var(--text-primary);
-
-  /* 새로 추가된 입체적인 들림 효과 */
   transform: translateY(-4px);
   box-shadow:
     0 10px 20px rgba(27, 36, 50, 0.12),
@@ -42,13 +40,15 @@
   top: var(--gap-xs-2);
   right: var(--gap-xs-2);
 
+  width: var(--gap-xl);
+  height: var(--gap-xl);
+
   display: none;
   width: center;
   height: center;
 
   align-items: center;
   justify-content: center;
-  padding-bottom: var(--gap-xs);
 
   background-color: var(--bg-muted);
   color: var(--text-main);
