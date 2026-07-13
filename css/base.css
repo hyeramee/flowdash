@@ -286,14 +286,23 @@ select:focus-visible {
   font-size: var(--font-size-xs);
 }
 
-/* 배경색, 글자색, 테두리색이 바뀔 때 0.3초 동안 부드럽게 애니메이션 */
-body,
-body *,
-.card,
-.sidebar,
-header {
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
+/* =================================================== */
+/* ⚡ 다크모드 전환 시 번쩍임 방지  */
+/* =================================================== */
+
+/* 초기 상태: 화면 전체를 투명하게 숨김 */
+body {
+  opacity: 0;
+}
+
+/* 등장 상태: JS가 실행되어 theme-loaded가 붙는 순간 헤더와 보드가 동시에 노출 */
+body.theme-loaded {
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+/* 만약 #board에 다른 파일의 트랜지션이 방해된다면 이것만 남겨두세요 */
+body.theme-loaded #board {
+  opacity: 1;
+  transition: opacity 0.15s ease;
 }
