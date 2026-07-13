@@ -19,7 +19,7 @@
   flex: 1;
   min-width: 0;
   background-color: var(--board-bg);
-  border: 0.0625rem solid var(--border-light);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-xl);
   padding: var(--gap-md-2);
   display: flex;
@@ -40,7 +40,7 @@
 
 /* 피그마 명세 */
 .board-column:nth-child(2) .column-header {
-  border-bottom-color: #5c4fe5;
+  border-bottom-color: var(--btn-bg);
 }
 
 /* 타이틀 글씨  */
@@ -69,6 +69,18 @@
   border-radius: var(--radius-circle);
   line-height: 1;
   flex-shrink: 0;
+}
+
+/* 완료(done) 컬럼 내부에 있는 카드 스타일 변경 */
+.board-column[data-status='done'] .card {
+  background-color: var(--app-bg);
+  color: var(--text-muted);
+}
+
+/* 완료 컬럼 카드의 제목에 취소선 추가 */
+.board-column[data-status='done'] .card__title {
+  text-decoration: line-through;
+  opacity: 0.7;
 }
 
 /* 내부 카드가 담기는 리스트 영역 */
