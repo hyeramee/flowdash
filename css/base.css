@@ -5,7 +5,11 @@
   --color-azure-15: #1b2432;
   --color-blue-60: #5f42f0;
   --color-azure-45: #5c6f8a;
+  --color-grey-70: #abb1ba;
+  --color-grey-30: #d1d5db;
+  --color-azure-20: #263140;
   --color-blue-45: #2e39b8;
+  --color-blue-65: #765eed;
   --color-azure-90: #e0e5eb;
   --color-red-50: #c33;
   --color-red-65: #f25a5a;
@@ -19,10 +23,13 @@
   --color-black-20: rgba(27, 36, 50, 0.12);
   --color-black-8: rgba(27, 36, 50, 0.06);
   --color-black-5: rgb(0 0 0 / 5%);
+  --color-azure-10: #131820;
+  --color-azure-12: #171d26;
   --color-white: #fff;
   --color-gray-10: #f5f5f5;
   --color-gray-97: #f6f7f9;
   --color-red-97: #ffeef0;
+  --color-grey-95: #f1f2f4;
 
   /*이런식으로 피그마에서 지정된 색 추가 가능,
   color: var(--color-red-65); 이런식으로 사용 가능 */
