@@ -2,6 +2,7 @@ export const STORAGE_KEYS = {
   TODOS: 'flowdash-todos',
   THEME: 'flowdash-theme',
   NICKNAME: 'flowdash-nickname',
+  WELCOME_INDEX: 'flowdash-welcome-index',
 };
 
 export const STATUS = {

@@ -5,6 +5,8 @@ import {
   saveTheme,
   loadNickname,
   saveNickname,
+  loadWelcomeIndex,
+  saveWelcomeIndex,
 } from './storage.js';
 import { PERIOD, SORT_ORDER, THEME, FILTER_ALL } from './constants.js';
 
@@ -24,6 +26,7 @@ let state = {
   todos: Array.isArray(initialTodos) ? initialTodos : [],
   theme: loadTheme() || defaultTheme,
   nickname: loadNickname() || defaultNickname,
+  welcomeIndex: Number(loadWelcomeIndex()) || 0,
   // 기간/우선순위 필터, 검색어, 정렬 순서는 LocalStorage에 저장하지 않음 — 새로고침 시 항상 기본값
   filters: { ...defaultFilters },
 };
@@ -48,6 +51,9 @@ export function setState(patch) {
   }
   if (Object.hasOwn(patch, 'nickname')) {
     saveNickname(state.nickname);
+  }
+  if (Object.hasOwn(patch, 'welcomeIndex')) {
+    saveWelcomeIndex(state.welcomeIndex);
   }
 
   listeners.forEach((listener) => listener(state));
