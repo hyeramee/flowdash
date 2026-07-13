@@ -26,7 +26,7 @@ function renderControls(elements, filters) {
 
 // 정렬 방향에 맞게 상단 버튼과 하단 문구를 갱신한다.
 function renderSortState(sortButton, sortValue, sortOrder) {
-  const isAscending = sortValue === SORT_ORDER.ASC;
+  const isAscending = sortOrder === SORT_ORDER.ASC;
 
   sortButton.textContent = isAscending ? '정렬: 오름차순 ↑' : '정렬: 내림차순 ↓';
 
