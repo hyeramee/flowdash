@@ -6,6 +6,9 @@
   gap: var(--gap-lg);
   background-color: var(--card-bg);
   border-radius: var(--radius-xl);
+}
+
+.search-box, .period-filter, .priority-filter, .sort-btn{
   color: var(--text-main);
 }
 
