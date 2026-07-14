@@ -70,7 +70,7 @@
 /* 완료(done) 컬럼 내부에 있는 카드 스타일 변경 */
 .board-column[data-status='done'] .card {
   background-color: var(--bg-completed);
-  color: var(--text-muted);
+  color: var(--bg-completed);
 }
 
 /* 완료 컬럼 카드의 제목에 취소선 추가 */
