@@ -37,7 +37,7 @@
 
 .header-top [data-stat='date'] time {
   font-size: var(--font-size-xs);
-  color: var(--text-muted);
+  color: var(--text-sub);
   font-weight: 400;
 }
 
@@ -71,33 +71,20 @@
   color: var(--text-muted);
 }
 
-/* ─── 반응형 레이아웃 ─── */
-
-/* 1. PC/태블릿 등 큰 화면에서는 줄바꿈 안 되게 숨김 */
-.header-br {
-  display: none;
-}
-
-/* 2. 모바일 화면(390px 이하)에서만 줄바꿈 켬 */
-@media (max-width: 390px) {
-  .header-br {
-    display: block;
-  }
-}
 
 /* =================================================== */
 /* E팀원 담당: 달성률                                  */
 /* =================================================== */
 .stats-grid h2 {
-  font-size: var(--font-size-xl); /* 뒤쪽에 선언되었던 값(xs)으로 통합 */
-  color: var(--text-muted);
-  font-weight: 600;
+  font-size: var(--font-size-md); /* 뒤쪽에 선언되었던 값(xs)으로 통합 */
+  color: var(--text-sub);
+  font-weight: 500;
   line-height: 1.5;
   word-break: keep-all; /* 중복 속성 제거 및 single화 */
 }
 
 .stats-grid p {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-4xl);
   font-weight: 700;
   color: var(--text-main);
   overflow: hidden;
@@ -125,12 +112,4 @@
 
 .stats-grid p[data-stat='achievement'] {
   color: var(--text-primary);
-}
-
-@media (min-width: 768px) {
-  .stats-grid {
-    /* 데스크톱에서는 5개 카드가 가로로 나란히 채워지도록 설정 */
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: var(--gap-lg);
-  }
 }

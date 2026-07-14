@@ -1,6 +1,19 @@
 /* 반응형 - 모바일 퍼스트 */
+
+/* 1. PC/태블릿 등 큰 화면에서는 줄바꿈 안 되게 숨김 */
+.header-br {
+  display: none;
+}
+
+@media (max-width: 390px) {
+  .header-br {
+    display: block;
+  }
+}
+
 /* 모바일 반응형 */
 @media (max-width: 48rem) {
+
   /* 768px -> 48rem */
   #board {
     flex-direction: column;
@@ -20,7 +33,11 @@
 
 
   /* 헤더 영역 */
-
+  .stats-grid {
+    /* 데스크톱에서는 5개 카드가 가로로 나란히 채워지도록 설정 */
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: var(--gap-lg);
+  }
 
 
   /* 컨트롤 영역 */
