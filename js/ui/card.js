@@ -1,10 +1,24 @@
 // 별도 init 함수 없음 — 이 파일은 board.js에서 카드 생성 함수를 가져다 쓰는 용도로 사용될 예정
 // (보드가 카드들을 렌더링할 때 이 파일의 함수를 호출)
+import { PRIORITY, STATUS } from '../constants.js';
+import { formatCardDate } from '../utils/date.js';
+
+const PRIORITY_TEXT = {
+  [PRIORITY.HIGH]: '높음',
+  [PRIORITY.MID]: '중간',
+  [PRIORITY.LOW]: '낮음',
+};
 
 export function createCardElement(todo) {
   const card = document.createElement('div');
   card.classList.add('card');
   card.dataset.id = String(todo.id);
+
+  let completedDateMarkup = '';
+
+  if (todo.status === STATUS.DONE && todo.completedAt !== null) {
+    completedDateMarkup = `<time class="card__date card__date--end">${formatCardDate(todo.completedAt)}</time>`;
+  }
 
   card.innerHTML = `
     <button class="delete-btn" aria-label="삭제">
@@ -13,11 +27,14 @@ export function createCardElement(todo) {
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
     </button>
-    <div class="card__priority priority--${todo.priority}">${todo.priorityText}</div>
+    <div class="card__priority priority--${todo.priority}">${PRIORITY_TEXT[todo.priority]}</div>
     <h3 class="card__title">${todo.title}</h3>
     <p class="card__content">${todo.content}</p>
     <div class="card__footer">
-      <time class="card__date">${todo.startDate}</time>
+     <time class="card__date card__date--start">
+    ${formatCardDate(todo.createdAt)}
+    </time>
+    ${completedDateMarkup}
     </div>
   `;
 
