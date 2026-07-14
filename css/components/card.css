@@ -21,7 +21,6 @@
   position: relative;
   /* 부드러운 변화를 위해 transition 통합 */
   transition: all 0.3s ease;
-  border: 1px solid transparent; /* 기본 테두리 설정 (필요시 수정) */
 }
 
 .card:hover,
@@ -160,6 +159,12 @@
   display: flex;
   align-items: center;
   line-height: 1.2;
+}
+
+.board-column[data-status='done'] .card__title,
+.board-column[data-status='done'] .card__content,
+.board-column[data-status='done'] .card__date {
+  color: var(--text-completed);
 }
 
 .card__date::before {
