@@ -5,10 +5,8 @@
 /* 3단의 보드 기둥들을 피그마처럼 가로로 나열 */
 #board {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--gap-lg);
+  flex-direction: column;
+  gap: var(--gap-md);
   margin-top: var(--gap-lg);
   width: 100%;
   box-sizing: border-box;
@@ -16,15 +14,14 @@
 
 /* 개별 컬럼 스타일 */
 .board-column {
-  flex: 1;
-  min-width: 0;
+  width: 100%;
+  min-height: auto;
   background-color: var(--board-bg);
   border-radius: var(--radius-xl);
   padding: var(--gap-lg);
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
-  min-height: 40.625rem;
   box-sizing: border-box;
 }
 
@@ -89,7 +86,6 @@
   gap: var(--gap-md);
   flex-grow: 1;
 }
-
 
 /* JS가 카드가 없을 때 동적으로 생성할 '할 일이 없습니다' 메시지 스타일 */
 .empty-message {

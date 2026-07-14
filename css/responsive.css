@@ -11,26 +11,9 @@
   }
 }
 
-/* 모바일 반응형 */
-@media (max-width: 48rem) {
-
-  /* 768px -> 48rem */
-  #board {
-    flex-direction: column;
-    gap: var(--gap-md);
-  }
-
-  .board-column {
-    width: 100%;
-    min-height: auto;
-    padding: var(--gap-lg);
-  }
-}
-
 /* Tablet (768px ~ 1199px) */
 @media (min-width: 768px) {
   /* 공통 영역 */
-
 
   /* 헤더 영역 */
   .stats-grid {
@@ -39,10 +22,7 @@
     gap: var(--gap-lg);
   }
 
-
   /* 컨트롤 영역 */
-
-
 
   /* 보드 영역 */
   #board {
@@ -51,23 +31,21 @@
   }
 
   .board-column {
-    width: auto;
+    flex: 1;
+    min-width: 20rem;
     min-height: 40.625rem;
     padding: var(--gap-lg);
   }
-
 
   /* 모달 영역 */
   .modal {
     max-width: 500px;
     margin: 20% auto;
   }
-
 }
 
 /* Desktop (1200px 이상) */
 @media (min-width: 1200px) {
-
   /* 공통 영역 */
   #app {
     max-width: 1200px;
@@ -76,8 +54,6 @@
   }
 
   /* 헤더 영역 */
-
-
 
   /* 컨트롤 영역 */
   .controls {
@@ -97,10 +73,7 @@
     grid-column: auto;
   }
 
-
   /* 보드 영역 */
-
-
 
   /* 모달 영역 */
 }
