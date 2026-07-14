@@ -4,7 +4,7 @@ import { THEME } from '../constants.js';
 
 export function initHeader() {
   /* -------------------------------------------------- */
-  /* ⚡ [초속 가로채기] 화면이 그려지기 전에 다크모드부터 주입 */
+  /* [초속 가로채기] 화면이 그려지기 전에 다크모드부터 주입 */
   /* -------------------------------------------------- */
   const { theme } = getState();
   // THEME.DARK 상수를 정확하게 매칭해서 판단합니다.
@@ -13,8 +13,6 @@ export function initHeader() {
   if (isDarkTheme) {
     document.body.classList.add('dark-mode');
   }
-
-  console.log('header 초기화됨');
 
   /* -------------------------------------------------- */
   /* [파트 1] 다크모드 토글 전역 상태 관리                 */
