@@ -129,6 +129,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-xxs); /*6px*/
+
+  margin-top: var(--gap-md); /* 내용과 간격 띄우기 */
+  padding-top: var(--gap-md); /* 선 위쪽 여백 */
+  border-top: 0.0625rem dashed var(--border-light); /* 점선 구분선 */
 }
 
 /* 날짜 텍스트 공통 설정 */
