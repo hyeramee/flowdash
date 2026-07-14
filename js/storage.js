@@ -21,10 +21,14 @@ export function loadTodos() {
 }
 
 export function saveTodos(todos) {
-  // 1. todos 배열을 JSON 문자열로 변환
-  const todosJson = JSON.stringify(todos);
-  // 2. TODOS 키에 저장
-  localStorage.setItem(STORAGE_KEYS.TODOS, todosJson);
+  try {
+    // 1. todos 배열을 JSON 문자열로 변환
+    const todosJson = JSON.stringify(todos);
+    // 2. TODOS 키에 저장
+    localStorage.setItem(STORAGE_KEYS.TODOS, todosJson);
+  } catch (error) {
+    console.error('할 일 목록을 저장하지 못했습니다.', error);
+  }
 }
 
 export function loadTheme() {
