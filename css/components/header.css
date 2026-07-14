@@ -10,6 +10,10 @@
   line-height: 1.5;
 }
 
+.header-top h1 .greeting-text {
+  color: var(--text-main);
+}
+
 .header-top span {
   color: var(--text-primary);
   font-size: var(--font-size-2xl);
