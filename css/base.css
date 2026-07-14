@@ -76,7 +76,8 @@
   color: var(--color-red-65); 이런식으로 사용 가능 */
 
   --text-main: var(--color-black-4); /* 기본 짙은 본문 텍스트 */
-  --text-muted: var(--color-grey-5); /* 부가 설명, 날짜 등 흐린 텍스트 */
+  --text-muted: var(--color-grey-5);
+  --text-completed: var(--color-grey-5); /* 부가 설명, 날짜 등 흐린 텍스트 */
   --text-primary: var(--color-pink-1); /* 강조하고 싶은 포인트 텍스트 */
   --text-white: var(--color-white);
   --text-priority-high: var(--color-red-65);
