@@ -19,7 +19,6 @@
   flex: 1;
   min-width: 0;
   background-color: var(--board-bg);
-  border: 1px solid var(--border-light);
   border-radius: var(--radius-xl);
   padding: var(--gap-lg);
   display: flex;
@@ -35,19 +34,19 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: var(--gap-md); /* 여백도 충분히 */
-  border-bottom: 0.125rem dashed var(--text-muted); /* solid -> dashed */
+  border-bottom: 1px dashed var(--border-divider); /* solid -> dashed */
 }
 
 /* 피그마 명세 */
 .board-column:nth-child(2) .column-header {
-  border-bottom-color: var(--btn-bg);
+  border-bottom-color: var(--border-actice);
 }
 
 /* 타이틀 글씨  */
 .column-header h2 {
   font-size: var(--font-size-xl); /* 18px */
-  font-weight: 700;
-  color: var(--text-muted);
+  font-weight: 600;
+  color: var(--text-sub);
 }
 
 /* 흰색 정원 배경에 짙은 본문 색상의 숫자 배지 */
@@ -62,7 +61,7 @@
 
   background-color: var(--card-bg);
   color: var(--text-main);
-  border: 0.0625rem solid var(--border-light);
+  box-shadow: 0 1px 3px var(--box-shadow-hover-layout);
 
   font-size: var(--font-size-xs);
   font-weight: 600;
@@ -73,7 +72,7 @@
 
 /* 완료(done) 컬럼 내부에 있는 카드 스타일 변경 */
 .board-column[data-status='done'] .card {
-  background-color: var(--app-bg);
+  background-color: var(--bg-completed);
   color: var(--text-muted);
 }
 
@@ -91,20 +90,6 @@
   flex-grow: 1;
 }
 
-/* 모바일 반응형 */
-@media (max-width: 48rem) {
-  /* 768px -> 48rem */
-  #board {
-    flex-direction: column;
-    gap: var(--gap-md);
-  }
-
-  .board-column {
-    width: 100%;
-    min-height: auto;
-    padding: var(--gap-lg);
-  }
-}
 
 /* JS가 카드가 없을 때 동적으로 생성할 '할 일이 없습니다' 메시지 스타일 */
 .empty-message {
