@@ -160,6 +160,7 @@ textarea {
   background: transparent;
   border: none;
   font-family: inherit;
+  color: inherit;
 }
 
 button {
