@@ -13,8 +13,9 @@ body.modal-open {
 }
 
 .modal-overlay {
-  position: absolute;
+  position: fixed;
   inset: 0;
+  z-index: 100;
   background-color: var(--overlay-bg, rgba(0, 0, 0, 0.40));
 }
 

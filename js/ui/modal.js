@@ -87,7 +87,7 @@ function createTodo(values) {
   const now = Date.now();
 
   return {
-    id: crypto.randomUUID(),
+    id: now,
     title: values.title,
     content: values.content,
     status: values.status,
