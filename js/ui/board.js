@@ -1,6 +1,7 @@
 import { createCardElement } from './card.js';
 import { subscribe } from '../state.js';
 import { getFilteredTodos } from '../selectors.js';
+
 // 보드 렌더링 함수
 function renderBoard() {
   const columns = {
@@ -9,23 +10,33 @@ function renderBoard() {
     done: document.querySelector('[data-status="done"] .card-list'),
   };
 
-  // 1. 각 컬럼의 기존 카드들을 모두 제거
-  Object.values(columns).forEach((list) => {
-    if (list) list.innerHTML = '';
-  });
+  //1. 각 컬럼의 카드 리스트를 초기화
+  const statusMessages = {
+    todo: '할 일이 없습니다',
+    doing: '진행 중인 일이 없습니다',
+    done: '완료된 일이 없습니다',
+  };
 
-  // 2. 현재 상태에 맞는 카드들을 생성하여 각 컬럼에 추가
+  // 현재 상태에 맞는 카드들을 생성하여 각 컬럼에 추가
   const todos = getFilteredTodos();
 
-  todos.forEach((todo) => {
-    const cardEl = createCardElement(todo);
-    const targetList = columns[todo.status];
+  Object.keys(columns).forEach((status) => {
+    const list = columns[status];
+    list.innerHTML = '';
 
-    if (targetList) {
-      targetList.appendChild(cardEl);
+    const filtered = todos.filter((todo) => todo.status === status);
+
+    if (filtered.length === 0) {
+      // 1. 카드가 없을때 컬럼에 안내 문구 표시
+      list.innerHTML = `<div class="empty-message">${statusMessages[status]}</div>`;
+    } else {
+      //2. 카드가 있을때 카드 생성 후 컬럼에 추가
+      filtered.forEach((todo) => {
+        const cardEl = createCardElement(todo);
+        list.appendChild(cardEl);
+      });
     }
   });
-
   updateCounts(todos);
 }
 
