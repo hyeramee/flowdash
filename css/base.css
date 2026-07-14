@@ -45,7 +45,7 @@
   --color-brown-10: rgba(253, 235, 233, 0.2);
   --color-Begie-11: #d0c7b8;
   --color-white-12: #f7f7f7;
-  --color-white-13: rgba(254, 254, 253, 0.8);
+  --color-white-13: rgba(254, 254, 253, 0.6);
   --color-black-14: rgba(0, 0, 0, 0.05);
   --color-line:
     linear-gradient(rgba(208, 199, 184, 0.25) 2px, transparent 2px),
@@ -99,6 +99,7 @@
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-xl: 16px;
+  --radius-xxl: 32px;
   --radius-circle: 100px;
 
   /* 자주 쓰는 레이아웃 간격 토큰 예시 */
@@ -153,6 +154,7 @@ body {
 
 /* 웹사이트 콘텐츠가 들어갈 가운데 정렬 상자 */
 #app {
+  border-radius: var(--radius-xxl);
   display: flex;
   flex-direction: column;
   align-items: flex-start;

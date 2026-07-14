@@ -3,11 +3,11 @@
 /* Tablet (768px ~ 1199px) */
 @media (min-width: 768px) {
   /* 공통 영역 */
-  
-  
+
+
   /* 헤더 영역 */
 
-  
+
 
   /* 컨트롤 영역 */
 
@@ -27,15 +27,17 @@
 
 /* Desktop (1200px 이상) */
 @media (min-width: 1200px) {
+
   /* 공통 영역 */
   #app {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 64px auto;
+    padding: var(--gap-xxl);
   }
-  
+
   /* 헤더 영역 */
 
-  
+
 
   /* 컨트롤 영역 */
   .controls {
