@@ -1,6 +1,7 @@
 body.dark-mode {
   --text-main: var(--color-white-6); /* 기본 짙은 본문 텍스트 */
-  --text-muted: var(--color-black-14); /* 부가 설명, 날짜 등 흐린 텍스트 */
+  --text-muted: var(--color-black-144); /* 부가 설명, 날짜 등 흐린 텍스트 */
+  --text-sub: var(--color-black-144);
   --text-primary: var(--color-pink-1); /* 강조하고 싶은 포인트 텍스트 */
   --text-white: var(--color-white); /* 다크모드나 어두운 버튼 위에서 쓸 기본 흰색 글자 */
   --text-priority-high: var(--color-pink-2); /* 중요도 높은 텍스트 */
@@ -21,15 +22,18 @@ body.dark-mode {
   --overlay-bg: var(--color-black-40); /*모달 바깥 배경*/
   --board-bg: var(--color-black-2);
   --btn-bg: var(--color-pink-1);
-  --card-bg: var(--color-black-5);
+  --card-bg: var(--color-black-55);
+  --bg-completed: var(--color-black-55);
   --app-bg: var(--color-black-3); /* 앱 전체 배경*/
   --border-focus: var(--color-pink-1); /* 포커스 시 테두리 색 */
   --box-shadow-hover: var(--color-white-3); /* 호버 시 테두리 색 */
   --box-shadow-hover-dark: var(--color-white-4);
   --box-shadow-hover-layout: var(--color-white-5);
-  --background-color: var(--app-bg); /*바깥 배경 테마*/
+  --background-color: var(--app-bg); /*모달 바깥 배경 테마*/
   --background-line: var(--color-line-dark);
 }
 
 body {
+  background-color: var(--background-color);
+  background-image: var(--background-line);
 }

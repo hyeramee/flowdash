@@ -55,9 +55,9 @@
 
   /*디자인 수정 컬러 다크모드*/
   --color-black-3: #1b1c1c;
-  --color-black-5: #484848;
+  --color-black-55: #484848;
   --color-white-6: #e4e2e1;
-  --color-black-14: #d9c1bd;
+  --color-black-144: #d9c1bd;
   --color-pink-2: #ffb4ab;
   --color-orange-10: #e29a2e;
   --color-green-10: #3fa796;
@@ -68,7 +68,7 @@
   --color-white-3: rgba(253, 246, 244, 0.15);
   --color-white-4: rgba(252, 251, 250, 0.22);
   --color-white-5: rgba(252, 251, 250, 0.04);
-  --color-line-datk:
+  --color-line-dark:
     linear-gradient(rgba(92, 87, 80, 0.35) 2px, transparent 2px),
     linear-gradient(90deg, rgba(92, 87, 80, 0.35) 2px, transparent 2px);
 
@@ -159,30 +159,6 @@
 
 @font-face {
   font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2')
-    format('woff2');
-  font-weight: 100;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2')
-    format('woff2');
-  font-weight: 200;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2')
-    format('woff2');
-  font-weight: 300;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Pretendard';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2')
     format('woff2');
   font-weight: 400;
@@ -210,22 +186,6 @@
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2')
     format('woff2');
   font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2')
-    format('woff2');
-  font-weight: 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2')
-    format('woff2');
-  font-weight: 900;
   font-display: swap;
 }
 
