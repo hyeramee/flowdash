@@ -11,7 +11,7 @@ const PRIORITY_TEXT = {
 
 export function createCardElement(todo) {
   const card = document.createElement('div');
-  card.classList.add('card');
+  card.classList.add('card', `card--priority-${todo.priority}`);
   card.dataset.id = String(todo.id);
 
   let completedDateMarkup = '';

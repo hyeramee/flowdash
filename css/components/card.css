@@ -11,7 +11,7 @@
   background-color: var(--card-bg, #ffffff);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg, 0.5rem);
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 4px var(--box-shadow-hover-layout);
   box-sizing: border-box;
   width: 100%;
 }
@@ -29,8 +29,29 @@
   border-color: var(--text-primary);
   transform: translateY(-4px);
   box-shadow:
-    0 10px 20px rgba(27, 36, 50, 0.12),
-    0 4px 8px rgba(27, 36, 50, 0.06);
+  0 10px 20px rgba(27, 36, 50, 0.12),
+  0 4px 8px rgba(27, 36, 50, 0.06);
+}
+
+/* 가상요소로 우선순위별 카드 꾸밈 요소 추가 */
+.card::before {
+  content: "";
+  width: 4px;
+  height: calc(100% - 40px);
+  border-radius: var(--radius-md);
+  position: absolute;
+  left: 0;
+  background-color: var(--card-priority-color, var(--border-light));
+}
+
+.card--priority-high {
+  --card-priority-color: var(--text-priority-high);
+}
+.card--priority-mid {
+  --card-priority-color: var(--text-priority-mid);
+}
+.card--priority-low {
+  --card-priority-color: var(--text-priority-low);
 }
 
 /* 2. 삭제 버튼(X) 스타일 */
@@ -43,13 +64,10 @@
   height: var(--gap-xl);
 
   display: none;
-  width: center;
-  height: center;
 
   align-items: center;
   justify-content: center;
 
-  background-color: var(--bg-muted);
   color: var(--text-main);
   border-radius: var(--radius-md);
   border: none;
@@ -68,9 +86,9 @@
   display: flex;
 }
 
-/* 삭제 버튼 호버 시 밝기 조절 */
+/* 삭제 버튼 호버 시 배경색*/
 .delete-btn:hover {
-  filter: brightness(0.9);
+  background-color: var(--bg-muted);
 }
 
 /* 1층: 우선순위 태그 */
