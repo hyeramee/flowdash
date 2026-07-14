@@ -28,8 +28,8 @@ export function createCardElement(todo) {
       </svg>
     </button>
     <div class="card__priority priority--${todo.priority}">${PRIORITY_TEXT[todo.priority]}</div>
-    <h3 class="card__title">${todo.title}</h3>
-    <p class="card__content">${todo.content}</p>
+    <h3 class="card__title">$</h3>
+    <p class="card__content">$</p>
     <div class="card__footer">
      <time class="card__date card__date--start">
     ${formatCardDate(todo.createdAt)}
@@ -37,6 +37,10 @@ export function createCardElement(todo) {
     ${completedDateMarkup}
     </div>
   `;
+
+  // 카드의 제목과 내용을 설정
+  card.querySelector('.card__title').textContent = todo.title;
+  card.querySelector('.card__content').textContent = todo.content;
 
   return card;
 }
