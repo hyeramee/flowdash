@@ -1,6 +1,6 @@
 import { createCardElement } from './card.js';
-import { state, getFilteredTodos } from './state.js';
-
+import { subscribe } from '../state.js';
+import { getFilteredTodos } from '../selectors.js';
 // 보드 렌더링 함수
 function renderBoard() {
   const columns = {
@@ -41,12 +41,12 @@ function updateCounts(todos) {
   });
 }
 
-// 3. 상태 변경 구독
-state.subscribe(() => {
+export function initBoard() {
+  // 앱이 시작될 때 한 번 렌더링한다.
   renderBoard();
-});
 
-// 초기 실행
-document.addEventListener('DOMContentLoaded', () => {
-  renderBoard();
-});
+  // state가 변경될 때마다 다시 렌더링한다.
+  subscribe(() => {
+    renderBoard();
+  });
+}
