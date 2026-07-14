@@ -106,5 +106,4 @@ select {
 
 .reset-btn:hover {
   background-color: var(--status-danger-bg);
-  color: var(--text-main);
 }
