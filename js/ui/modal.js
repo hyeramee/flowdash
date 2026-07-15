@@ -4,6 +4,7 @@
 import { getState, setState, resetTodos } from '../state.js';
 import { STATUS, PRIORITY } from '../constants.js';
 import { toggleHidden } from '../utils/dom.js';
+import { setCustomSelectValue } from './custom-select.js';
 
 let editingTodoId = null;
 let confirmAction = null;
@@ -44,7 +45,7 @@ function openCreateModal(elements) {
   elements.formTitle.textContent = '새 할 일';
 
   elements.todoForm.elements.priority.value = PRIORITY.MID;
-  elements.todoForm.elements.status.value = STATUS.TODO;
+  setCustomSelectValue(elements.todoForm.elements.status, STATUS.TODO);
 
   showFormModal(elements);
 
@@ -65,7 +66,7 @@ function openEditModal(elements, todoId) {
   elements.todoForm.elements.title.value = todo.title;
   elements.todoForm.elements.content.value = todo.content ?? '';
   elements.todoForm.elements.priority.value = todo.priority;
-  elements.todoForm.elements.status.value = todo.status;
+  setCustomSelectValue(elements.todoForm.elements.status, todo.status);
 
   showFormModal(elements);
 }

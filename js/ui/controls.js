@@ -3,6 +3,7 @@
 
 import { getState, setState, subscribe } from '../state.js';
 import { SORT_ORDER, PERIOD, PRIORITY } from '../constants.js';
+import { setCustomSelectValue } from './custom-select.js';
 
 const PERIOD_LABELS = {
   [PERIOD.TODAY]: '오늘',
@@ -10,9 +11,9 @@ const PERIOD_LABELS = {
 };
 
 const PRIORITY_LABELS = {
- [PRIORITY.HIGH]: '높음', 
- [PRIORITY.MID]: '중간',
- [PRIORITY.LOW]: '낮음',
+  [PRIORITY.HIGH]: '높음',
+  [PRIORITY.MID]: '중간',
+  [PRIORITY.LOW]: '낮음',
 };
 
 // 기존 filters를 유지하면서 전달받은 필터 항목만 변경한다.
@@ -29,14 +30,12 @@ function updateFilters(filterPatch) {
 // state.filters 값을 컨트롤 UI에 반영한다.
 function renderControls(elements, labels, filters) {
   elements.searchInput.value = filters.search;
-  elements.periodSelect.value = filters.period;
-  elements.prioritySelect.value = filters.priority;
 
-  renderSortState(
-    elements.sortButton,
-    elements.sortValue,
-    filters.sortOrder,
-  );
+  renderSortState(elements.sortButton, elements.sortValue, filters.sortOrder);
+
+  setCustomSelectValue(elements.periodSelect, filters.period);
+
+  setCustomSelectValue(elements.prioritySelect, filters.priority);
 
   renderLabels(labels, filters);
 }
@@ -58,7 +57,7 @@ function createLabel(labelText) {
   label.classList.add('sort-label');
   label.hidden = true;
 
-  const title = document.createTextNode(`${labelText}: `,);
+  const title = document.createTextNode(`${labelText}: `);
 
   const value = document.createElement('span');
   value.classList.add('sort-value');
@@ -66,7 +65,7 @@ function createLabel(labelText) {
   label.append(title, value);
 
   return {
-    element: label, 
+    element: label,
     value,
   };
 }
@@ -107,21 +106,16 @@ export function initControls() {
   };
 
   const { searchInput, periodSelect, prioritySelect, sortButton, sortLabel, sortValue } = elements;
-  
+
   // DOM 찾기
   if (!searchInput || !periodSelect || !prioritySelect || !sortButton || !sortLabel || !sortValue) {
     console.error('컨트롤 요소를 찾지 못했습니다.');
     return;
   }
 
-  elements.sortLabel.before(
-    labels.period.element,
-    labels.priority.element,
-  );
+  elements.sortLabel.before(labels.period.element, labels.priority.element);
 
-  elements.sortLabel.after (
-    labels.search.element,
-  );
+  elements.sortLabel.after(labels.search.element);
 
   // 검색창의 현재 문자열을 filters.search에 반영한다. 실제 제목·내용 검색은 selectors.js가 수행한다.
   searchInput.addEventListener('input', (event) => {
@@ -161,6 +155,4 @@ export function initControls() {
   subscribe((state) => {
     renderControls(elements, labels, state.filters);
   });
-
-
 }
