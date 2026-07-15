@@ -33,4 +33,4 @@ export const THEME = {
   DARK: 'dark',
 };
 
-export const FILTER_ALL = 'all'; // 우선순위 필터의 "전체" 값
+export const FILTER_ALL = 'all';

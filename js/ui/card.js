@@ -1,5 +1,3 @@
-// 별도 init 함수 없음 — 이 파일은 board.js에서 카드 생성 함수를 가져다 쓰는 용도로 사용될 예정
-// (보드가 카드들을 렌더링할 때 이 파일의 함수를 호출)
 import { PRIORITY, STATUS } from '../constants.js';
 import { formatCardDate } from '../utils/date.js';
 
@@ -38,7 +36,6 @@ export function createCardElement(todo) {
     </div>
   `;
 
-  // 카드의 제목과 내용을 설정
   card.querySelector('.card__title').textContent = todo.title;
   card.querySelector('.card__content').textContent = todo.content;
 

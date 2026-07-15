@@ -1,9 +1,7 @@
-/* =================================================== */
-/* E팀원 담당: 헤더                                   */
-/* =================================================== */
+/* 헤더 */
 .header-top h1 {
   font-size: var(--font-size-2xl);
-  font-weight: 700; /* 굵게 */
+  font-weight: 700;
   color: var(--text-main);
   display: inline-block;
   width: 100%;
@@ -17,14 +15,14 @@
 .header-top span {
   color: var(--text-primary);
   font-size: var(--font-size-2xl);
-  font-weight: 700; /* 굵게 */
+  font-weight: 700;
   display: inline;
   border-style: none;
   border: 2px solid transparent;
 }
 
 .no-wrap-group {
-  white-space: nowrap; /* 글자와 아이콘이 한 줄에 묶여서 떨어지게 함 */
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
@@ -55,7 +53,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--gap-xs); /* 글자와 꽃 사이 간격 (8px) */
+  gap: var(--gap-xs);
 }
 
 .header-top button {
@@ -71,16 +69,15 @@
   color: var(--text-muted);
 }
 
-
 /* =================================================== */
-/* E팀원 담당: 달성률                                  */
+/* 달성률 */
 /* =================================================== */
 .stats-grid h2 {
-  font-size: var(--font-size-md); /* 뒤쪽에 선언되었던 값(xs)으로 통합 */
+  font-size: var(--font-size-md);
   color: var(--text-sub);
   font-weight: 500;
   line-height: 1.5;
-  word-break: keep-all; /* 중복 속성 제거 및 single화 */
+  word-break: keep-all;
 }
 
 .stats-grid p {
@@ -103,7 +100,6 @@
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-light);
 
-  /* 내부 텍스트 정렬을 위한 Flexbox */
   display: flex;
   flex-direction: column;
   gap: var(--gap-xs);
