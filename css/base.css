@@ -1,0 +1,392 @@
+/* 별명 등록하기 (디자인 토큰) */
+:root {
+  /* 피그마에서 정한 색상들 */
+
+  --color-azure-15: #1b2432;
+  --color-blue-60: #5f42f0;
+  --color-azure-45: #5c6f8a;
+  --color-grey-70: #abb1ba;
+  --color-grey-30: #d1d5db;
+  --color-azure-20: #263140;
+  --color-blue-45: #2e39b8;
+  --color-blue-65: #765eed;
+  --color-azure-90: #e0e5eb;
+  --color-red-20: #38191d;
+  --color-red-50: #c33;
+  --color-red-65: #f25a5a;
+  --color-red-95: #ffebeb;
+  --color-orange-55: #f49d25;
+  --color-orange-95: #ffedd0;
+  --color-spring-green-40: #29a366;
+  --color-spring-green-85: #edf8f2;
+  --color-black-40: rgb(0 0 0 / 40%);
+  --color-black-2: rgb(0 0 0 / 2%);
+  --color-black-20: rgba(27, 36, 50, 0.12);
+  --color-black-8: rgba(27, 36, 50, 0.06);
+  --color-black-5: rgb(0 0 0 / 5%);
+  --color-azure-10: #131820;
+  --color-azure-12: #171d26;
+  --color-white: #fff;
+  --color-gray-10: #f5f5f5;
+  --color-gray-97: #f6f7f9;
+  --color-red-97: #ffeef0;
+  --color-grey-95: #f1f2f4;
+  --color-blue-2: rgba(91, 79, 230, 0.2);
+  --color-red-2: rgb(242 90 90 / 25%);
+
+  /*디자인 수정 컬러*/
+  --color-pink-1: #f29885;
+  --color-pink-4: #f77c64;
+  --color-black-4: #24272d;
+  --color-grey-5: #8286a0;
+  --color-white-6: #e5e5e6;
+  --color-white-14: rgba(229, 229, 230, 0.6); /* --color-white-6 반투명 버전, 컨트롤 호버용 */
+  --color-brown-7: #aba8a4;
+  --color-brown-8: #555554;
+  --color-red-9: #e4574c;
+  --color-brown-10: rgba(242, 152, 133, 0.2);
+  --color-beige-1: #d0c7b8;
+  --color-white-12: #f7f7f7;
+  --color-white-13: rgba(254, 254, 253, 0.6);
+  --color-black-14: rgba(0, 0, 0, 0.05);
+  --color-beige-11: rgba(244, 241, 237, 0.7);
+  --color-line:
+    linear-gradient(rgba(208, 199, 184, 0.25) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(208, 199, 184, 0.25) 2px, transparent 2px);
+  --color-pink-3: rgba(242, 152, 133, 0.2);
+
+  /*디자인 수정 컬러 다크모드*/
+  --color-black-3: #1b1c1c;
+  --color-black-888: rgba(27, 28, 28, 0.7);
+  ---color-black-55: #484848;
+  --color-black-55: #484848;
+  --color-white-6: #e4e2e1;
+  --color-black-144: #d9c1bd;
+  --color-pink-2: #ffb4ab;
+  --color-orange-10: #e29a2e;
+  --color-green-10: #3fa796;
+  --color-gray-11: rgba(255, 180, 171, 0.1);
+  --color-gray-12: #3a3a3a;
+  --color-gray-15: rgba(58, 58, 58, 0.6); /* --color-gray-12 반투명 버전, 다크모드 컨트롤 호버용 */
+  --color-gray-13: rgba(83, 67, 64, 0.5);
+  --color-gray-14: rgba(83, 67, 64, 0.1);
+  --color-white-3: rgba(255, 245, 246, 0.25);
+  --color-white-4: rgba(252, 251, 250, 0.22);
+  --color-white-5: rgba(252, 251, 250, 0.04);
+  --color-line-dark:
+    linear-gradient(rgba(92, 87, 80, 0.2) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(92, 87, 80, 0.2) 2px, transparent 2px);
+  --colot-gray-333: #333333;
+  --color-dark-grey: #2d2e2e;
+  --color-gray-828: #828282;
+  --color-black-123: #121313;
+
+  /*이런식으로 피그마에서 지정된 색 추가 가능,
+  color: var(--color-red-65); 이런식으로 사용 가능 */
+
+  --text-main: var(--color-black-4); /* 기본 짙은 본문 텍스트 */
+  --text-muted: var(--color-grey-5);
+  --text-card: var(--color-grey-5);
+  --text-completed: var(--color-grey-5); /* 부가 설명, 날짜 등 흐린 텍스트 */
+  --text-primary: var(--color-pink-1); /* 강조하고 싶은 포인트 텍스트 */
+  --text-white: var(--color-white);
+  --text-priority-high: var(--color-red-65);
+  --text-priority-mid: var(--color-orange-55);
+  --text-priority-low: var(--color-spring-green-40);
+  --bg-priority-high: var(--color-red-95);
+  --bg-priority-mid: var(--color-orange-95);
+  --bg-priority-low: var(--color-spring-green-85);
+  --bg-muted: var(--color-white-6); /* 옅은 회색 배경 (지방 배경, 칩 등) */
+  --bg-muted-hover: var(--color-white-14); /* 컨트롤 호버 전용, --bg-muted보다 옅게 */
+  --border-light: var(--color-white-6); /* 은은한 구분선/테두리 */
+  --border-muted: var(--color-brown-7); /* 진한 톤의 테두리 */
+  --border-actice: var(--color-pink-1);
+  --status-success: var(--color-spring-green-40); /* 성공, 완료 (초록) */
+  --status-warning: var(--color-orange-55); /* 경고, 대기 (오렌지) */
+  --status-danger: var(--color-red-65); /* 에러, 위험 (밝은 빨강) */
+  --status-danger-dark: var(--color-red-50); /* 에러 텍스트 또는 호버용 (짙은 빨강) */
+  --status-danger-bg: var(--color-brown-10); /* 호버 배경 (연한 빨강) */
+  --overlay-bg: var(--color-black-40);
+  --board-bg: var(--color-white);
+  --btn-bg: var(--color-pink-1);
+  --btn-bg-hover: var(--color-pink-4);
+  --card-bg: var(--color-white);
+  --inner-card-bg: var(--color-white);
+  --app-bg: var(--color-white-13); /* 앱 전체 배경*/
+  --border-focus: var(--color-pink-1); /* 포커스 시 테두리 색 */
+  --box-shadow-focus: var(--color-pink-3); /* 포커스 시 그림자 색(blue) */
+  --box-shadow-danger-focus: var(--color-red-2); /* 포커스 시 그림자 색(red) */
+  --box-shadow-hover: var(--color-black-20); /* 호버 시 테두리 색 */
+  --box-shadow-hover-dark: var(--color-black-8);
+  --box-shadow-hover-layout: var(--color-black-5);
+  --border-divider: var(--color-beige-1); /* 구분선 테두리 */
+  --text-sub: var(--color-brown-8);
+  --bg-completed: var(--color-white-12);
+  --background-color: var(--color-beige-11);
+  --background-line: var(--color-line);
+
+  --font-size-xs: var(--space-12);
+  --font-size-md: var(--space-14);
+  --font-size-lg: var(--space-16);
+  --font-size-xl: var(--space-18);
+  --font-size-2xl: var(--space-24);
+  --font-size-3xl: var(--space-28);
+  --font-size-4xl: var(--space-32);
+
+  /* 둥글기 토큰 */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-xxl: 32px;
+  --radius-circle: 100px;
+
+  /* 자주 쓰는 레이아웃 간격 토큰 예시 */
+  --space-4: 0.25rem; /*4px*/
+  --space-6: 0.37rem; /* 6px */
+  --space-8: 0.5rem; /* 8px */
+  --space-12: 0.75rem; /* 12px */
+  --space-14: 0.87rem; /* 14px */
+  --space-16: 1rem; /* 16px */
+  --space-20: 1.25rem; /* 20px */
+  --space-24: 1.5rem; /* 24px */
+  --space-28: 1.75rem; /* 28px */
+  --space-32: 2rem; /* 32px */
+  --space-40: 2.5rem; /* 40px */
+  --space-48: 3rem; /* 48px */
+  --space-64: 4rem; /* 64px */
+
+  --gap-xxxs: var(--space-4); /* 4px */
+  --gap-xxs: var(--space-6); /* 6px  */
+  --gap-xs: var(--space-8); /* 8px  */
+  --gap-xs-2: var(--space-12); /* 12px */
+  --gap-sm: var(--space-14); /* 14px */
+  --gap-md: var(--space-16); /* 16px */
+  --gap-md-2: var(--space-20); /* 20px */
+  --gap-lg: var(--space-24); /* 24px */
+  --gap-xl: var(--space-28); /* 28px */
+  --gap-xxl: var(--space-32); /* 32px */
+  --gap-xxxl: var(--space-40); /* 40px */
+  --gap-max: var(--space-48); /* 48px */
+  --gap-maxim: var(--space-64); /* 64px */
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2')
+    format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2')
+    format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2')
+    format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2')
+    format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* 화면 전체에 기본 규칙 적용하기 (레이아웃 기본값) */
+body {
+  background-color: var(--background-color);
+  background-image: var(--background-line);
+
+  background-size: 56px 56px;
+  color: var(--text-main);
+  font-size: var(--font-size-lg);
+  line-height: 1.5;
+  margin: 0;
+
+  font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+}
+
+/* 웹사이트 콘텐츠가 들어갈 가운데 정렬 상자 */
+#app {
+  border-radius: var(--radius-xxl);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--gap-md);
+  gap: var(--gap-xxl);
+  background-color: var(--app-bg);
+}
+
+/* 변형(위치이동)과 그림자가 0.3초 동안 부드럽게 일어나도록 설정 */
+.hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px); /* 위로 살짝 슬라이스 (-4px 만큼 올리기) */
+
+  /* 마우스를 올렸을 때 부드럽게 깔리는 은은한 네이비/그레이 톤 그림자 효과 */
+  box-shadow:
+    0 10px 20px var(--box-shadow-hover),
+    0 4px 8px var(--box-shadow-hover-dark);
+}
+
+/* color, background-color border-color가 0.3초 동안 부드럽게 일어나도록 설정 */
+.hover {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.click-focus {
+  border: 1px solid var(--border-light);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.click-focus:focus-visible,
+.click-focus:focus-within {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 2px var(--box-shadow-focus);
+}
+
+.modal-actions button[data-action='submit-modal'],
+.add-btn {
+  border: 1px solid transparent;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.modal-actions button[data-action='submit-modal']:focus-visible,
+.add-btn:focus-visible,
+.modal-priority input[type='radio']:focus-visible + label {
+  outline: none;
+  border-color: var(--card-bg);
+  box-shadow: 0 0 0 2px var(--box-shadow-focus);
+}
+
+:is(.reset-btn, .confirm-delet-btn):focus-visible {
+  outline: none;
+  border-color: var(--status-danger);
+  box-shadow: 0 0 0 2px var(--box-shadow-danger-focus);
+}
+
+/* 클릭할 때 그림자 없이 위로만 살짝 들리는 공통 클래스 */
+.click-lift-pure {
+  /* 클릭했다가 뗄 때도 부드럽게 돌아오도록 애니메이션 지정 */
+  transition: transform 0.2s ease;
+}
+
+/* 마우스로 꾹 클릭하고 있는 순간 (:active) */
+.click-lift-pure:active {
+  /* 위쪽(Y축)으로 4px 만큼 슥 올라갑니다 */
+  transform: translateY(-4px);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.row.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex.row.left {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex.row.right {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-col.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col.left {
+  align-items: flex-start;
+}
+
+.flex-col.right {
+  align-items: flex-end;
+}
+
+.flex-col.top {
+  justify-content: flex-start;
+}
+
+.flex-col.bottom {
+  justify-content: flex-end;
+}
+
+.grid-layout {
+  display: grid;
+  gap: var(--gap-md);
+}
+
+/* 레이아웃 */
+.header-top,
+.stats-grid div,
+.controls,
+.board-column {
+  border: 1px solid var(--border-light);
+  background-color: var(--card-bg);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 3px 0 var(--box-shadow-hover-layout);
+}
+
+/* 푸터 */
+#footer {
+  width: 100%;
+  padding: var(--gap-md) 0;
+  border-top: 1px solid var(--border-light);
+  text-align: center;
+  font-size: var(--font-size-xs);
+}
+
+/* =================================================== */
+/* ⚡ 다크모드 전환 시 번쩍임 방지  */
+/* =================================================== */
+
+/* 초기 상태: 화면 전체를 투명하게 숨김 */
+body {
+  opacity: 0;
+}
+
+/* 등장 상태: JS가 실행되어 theme-loaded가 붙는 순간 헤더와 보드가 동시에 노출 */
+body.theme-loaded {
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+/* 만약 #board에 다른 파일의 트랜지션이 방해된다면 이것만 남겨두세요 */
+body.theme-loaded #board {
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}

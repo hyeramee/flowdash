@@ -1,0 +1,80 @@
+/* 반응형 - 모바일 퍼스트 */
+
+/* PC/태블릿 등 큰 화면에서는 줄바꿈 안 되게 숨김 */
+.header-br {
+  display: none;
+}
+
+@media (max-width: 390px) {
+  .header-br {
+    display: block;
+  }
+}
+
+/* Tablet (768px ~ 1199px) */
+@media (min-width: 768px) {
+  /* 공통 영역 */
+
+  /* 헤더 영역 */
+  .stats-grid {
+    /* 데스크톱에서는 5개 카드가 가로로 나란히 채워지도록 설정 */
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: var(--gap-lg);
+  }
+
+  /* 컨트롤 영역 */
+
+  /* 보드 영역 */
+
+  /* 모달 영역 */
+  .modal {
+    max-width: 500px;
+  }
+}
+
+/* Desktop (1200px 이상) */
+@media (min-width: 1200px) {
+
+  /* 공통 영역 */
+  #app {
+    max-width: 1200px;
+    margin: 64px auto;
+    padding: var(--gap-xxl);
+  }
+
+  /* 헤더 영역 */
+
+  /* 컨트롤 영역 */
+  .controls {
+    flex-direction: row;
+  }
+
+  .add-btn {
+    flex: 1;
+  }
+
+  .controls-toolbar {
+    grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr));
+  }
+
+  .controls .search-box,
+  .controls .sort-btn {
+    grid-column: auto;
+  }
+
+  /* 보드 영역 */
+    #board {
+    flex-direction: row;
+    gap: var(--gap-lg);
+  }
+
+  .board-column {
+    flex: 1;
+    min-width: 20rem;
+    min-height: 40.625rem;
+    padding: var(--gap-lg);
+  }
+
+
+  /* 모달 영역 */
+}

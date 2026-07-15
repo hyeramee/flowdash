@@ -1,0 +1,115 @@
+/* =================================================== */
+/* E팀원 담당: 헤더                                   */
+/* =================================================== */
+.header-top h1 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700; /* 굵게 */
+  color: var(--text-main);
+  display: inline-block;
+  width: 100%;
+  line-height: 1.5;
+}
+
+.header-top h1 .greeting-text {
+  color: var(--text-main);
+}
+
+.header-top span {
+  color: var(--text-primary);
+  font-size: var(--font-size-2xl);
+  font-weight: 700; /* 굵게 */
+  display: inline;
+  border-style: none;
+  border: 2px solid transparent;
+}
+
+.no-wrap-group {
+  white-space: nowrap; /* 글자와 아이콘이 한 줄에 묶여서 떨어지게 함 */
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.title-area svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header-top [data-stat='date'] time {
+  font-size: var(--font-size-xs);
+  color: var(--text-sub);
+  font-weight: 400;
+}
+
+.header-top {
+  background-color: var(--card-bg);
+  width: 100%;
+  padding: var(--gap-lg) var(--gap-xxl);
+  border-radius: var(--radius-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.title-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-xs); /* 글자와 꽃 사이 간격 (8px) */
+}
+
+.header-top button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--gap-xxl);
+  height: var(--gap-xxl);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-circle);
+  color: var(--text-muted);
+}
+
+
+/* =================================================== */
+/* E팀원 담당: 달성률                                  */
+/* =================================================== */
+.stats-grid h2 {
+  font-size: var(--font-size-md); /* 뒤쪽에 선언되었던 값(xs)으로 통합 */
+  color: var(--text-sub);
+  font-weight: 500;
+  line-height: 1.5;
+  word-break: keep-all; /* 중복 속성 제거 및 single화 */
+}
+
+.stats-grid p {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  color: var(--text-main);
+  overflow: hidden;
+}
+
+.stats-grid {
+  width: 100%;
+  gap: var(--gap-xs-2);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stats-grid > div {
+  background-color: var(--card-bg);
+  padding: var(--gap-md-2);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+
+  /* 내부 텍스트 정렬을 위한 Flexbox */
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+  min-width: 0;
+}
+
+.stats-grid p[data-stat='achievement'] {
+  color: var(--text-primary);
+}

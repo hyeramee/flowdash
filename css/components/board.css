@@ -1,0 +1,100 @@
+/* =================================================== */
+/* B팀원 담당: 보드 레이아웃 (board.css)                   */
+/* =================================================== */
+
+/* 3단의 보드 기둥들을 피그마처럼 가로로 나열 */
+#board {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+  margin-top: var(--gap-lg);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 개별 컬럼 스타일 */
+.board-column {
+  width: 100%;
+  min-height: auto;
+  background-color: var(--board-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--gap-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xl);
+  box-sizing: border-box;
+}
+
+/* 컬럼 헤더 공통 스타일 */
+.column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--gap-md); /* 여백도 충분히 */
+  border-bottom: 1px dashed var(--border-divider); /* solid -> dashed */
+}
+
+/* 피그마 명세 */
+.board-column:nth-child(2) .column-header {
+  border-bottom-color: var(--border-actice);
+}
+
+/* 타이틀 글씨  */
+.column-header h2 {
+  font-size: var(--font-size-xl); /* 18px */
+  font-weight: 600;
+  color: var(--text-sub);
+}
+
+/* 흰색 정원 배경에 짙은 본문 색상의 숫자 배지 */
+.column-header .count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 고정 크기 정원 */
+  width: 1.75rem;
+  height: 1.75rem;
+
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  box-shadow: 0 1px 3px var(--box-shadow-hover-layout);
+
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  border-radius: var(--radius-circle);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* 완료(done) 컬럼 내부에 있는 카드 스타일 변경 */
+.board-column[data-status='done'] .card {
+  background-color: var(--bg-completed);
+}
+
+/* 완료 컬럼 카드의 제목에 취소선 추가 */
+.board-column[data-status='done'] .card__title {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* 내부 카드가 담기는 리스트 영역 */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+  flex-grow: 1;
+}
+
+/* JS가 카드가 없을 때 동적으로 생성할 '할 일이 없습니다' 메시지 스타일 */
+.empty-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 12.5rem; /* 피그마 여백에 맞춘 적절한 높이 */
+  color: var(--text-muted); /* 타이틀 글씨와 똑같은 은은한 회색 */
+  font-size: var(--font-size-md); /* 기본 본문 크기 */
+  text-align: center;
+  user-select: none;
+}

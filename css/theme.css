@@ -1,0 +1,47 @@
+body.dark-mode {
+  --text-main: var(--color-white-6); /* 기본 짙은 본문 텍스트 */
+  --text-muted: var(--color-black-144); /* 부가 설명, 날짜 등 흐린 텍스트 */
+  --text-completed: var(--color-brown-8);
+  --text-sub: var(--color-black-144);
+  --text-primary: var(--color-pink-1); /* 강조하고 싶은 포인트 텍스트 */
+  --text-white: var(--color-white); /* 다크모드나 어두운 버튼 위에서 쓸 기본 흰색 글자 */
+  --text-priority-high: var(--color-pink-2); /* 중요도 높은 텍스트 */
+  --text-priority-mid: var(--color-orange-10); /* 중요도 중간 텍스트 */
+  --text-priority-low: var(--color-green-10); /* 중요도 낮은 텍스트 */
+  --bg-priority-high: var(--color-gray-11); /* 중요도 높은 배경 */
+  --bg-priority-mid: var(--color-gray-11); /* 중요도 중간 배경 */
+  --bg-priority-low: var(--color-gray-11); /* 중요도 낮은 배경 */
+  --bg-muted: var(--color-gray-12); /* 옅은 회색 배경 (지방 배경, 칩 등) */
+  --bg-muted-hover: var(--color-gray-15); /* 컨트롤 호버 전용, --bg-muted보다 옅게 */
+  --border-light: var(--color-brown-8); /* 은은한 구분선/테두리 */
+  --border-muted: var(--color-gray-14); /* 진한 톤의 테두리 */
+  --border-actice: var(--color-pink-1);
+  --status-success: var(--color-green-10); /* 성공, 완료 (초록) */
+  --status-warning: var(--color-orange-10); /* 경고, 대기 (오렌지) */
+  --status-danger: var(--color-pink-2); /* 에러, 위험 (밝은 빨강) */
+  --status-danger-dark: var(--color-red-50); /* 에러 텍스트 또는 호버용 (짙은 빨강) */
+  --status-danger-bg: var(--color-red-20); /* 호버 배경 ( 다크모드용) */
+  --overlay-bg: var(--color-black-40); /*모달 바깥 배경*/
+  --board-bg: var(--color-dark-grey);
+  --btn-bg: var(--color-pink-1);
+  --btn-bg-hover: var(--color-pink-4);
+  --card-bg: var(--color-dark-grey);
+  --bg-completed: var(--color-black-3);
+  --app-bg: var(--color-black-888); /* 앱 전체 배경*/
+  --border-focus: var(--color-pink-1); /* 포커스 시 테두리 색 */
+  --box-shadow-hover: var(--color-white-3); /* 호버 시 테두리 색 */
+  --box-shadow-hover-dark: var(--color-white-4);
+  --box-shadow-hover-layout: var(--color-white-5);
+  --background-color: var(--color-black-123); /*모달 바깥 배경 테마*/
+  --background-line: var(--color-line-dark);
+  --inner-card-bg: var(--color-black-3);
+  --text-card: var(--color-gray-828);
+}
+
+body.dark-mode :is(.card, .header-top, .stats-grid > div, .controls, .board-column) {
+  border-color: transparent;
+}
+
+body.dark-mode .custom-select__list {
+  box-shadow: 0 2px 5px var(--box-shadow-hover);
+}
