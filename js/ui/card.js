@@ -15,7 +15,7 @@ export function createCardElement(todo) {
   let secondaryDateMarkup = '';
 
   const isCompleted = todo.status === STATUS.DONE && todo.completedAt !== null;
-  const isUpdated = todo.updatedAt != null && todo.updatedAt !== todo.createdAt;
+  const isUpdated = todo.updatedAt != null && todo.updatedAt != todo.createdAt;
 
   if (isCompleted) {
     secondaryDateMarkup = `<time class="card__date card__date--end"> ${formatCardDate(todo.completedAt)}</time>`;
