@@ -88,14 +88,23 @@ function createTodo(values) {
     status: values.status,
     priority: values.priority,
     createdAt: now,
-    updatedAt: now,
+    updatedAt: null,
     completedAt: values.status === STATUS.DONE ? now : null,
   };
 }
 
 function updateTodo(todo, values) {
+  const hasChanges =
+  todo.title !== values.title ||
+  todo.content !== values.content ||
+  todo.priority !== values.priority ||
+  todo.status !== values.status;
+  
+  if (!hasChanges) {
+    return todo;
+  }
+  
   const now = Date.now();
-
   let completedAt = todo.completedAt;
 
   if (todo.status !== STATUS.DONE && values.status === STATUS.DONE) {
