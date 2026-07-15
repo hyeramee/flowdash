@@ -4,10 +4,6 @@
   display: none;
 }
 
-.modal-open {
-  display: block;
-}
-
 body.modal-open {
   overflow: hidden;
 }
@@ -21,6 +17,10 @@ body.modal-open {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.modal-overlay.hidden {
+  display: none;
 }
 
 .modal {
