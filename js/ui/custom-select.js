@@ -1,4 +1,3 @@
-// 기존 select의 option을 이용해 디자인 가능한 커스텀 드롭다운을 생성하고 동기화한다.
 const customSelectInstances = new Map();
 
 let customSelectId = 0;
