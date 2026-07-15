@@ -43,6 +43,10 @@
   transition: border-color 0.2s ease;
 }
 
+.search-box input {
+  width: 100%;
+}
+
 .search-box:focus-within {
   border-color: var(--border-focus);
 }

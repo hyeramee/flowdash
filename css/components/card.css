@@ -1,6 +1,4 @@
-/* =================================================== */
-/* B팀원 담당: 개별 카드 스타일 (card.css)                */
-/* =================================================== */
+/* 개별 카드 스타일 */
 
 /* 개별 카드 기본 구조 */
 .card {
@@ -19,7 +17,6 @@
 /* 1. 카드 호버 효과 */
 .card {
   position: relative;
-  /* 부드러운 변화를 위해 transition 통합 */
   transition: all 0.3s ease;
 }
 
@@ -80,12 +77,10 @@
   transition: filter 0.2s ease;
 }
 
-/* 카드 호버 시 삭제 버튼 표시 */
 .card:hover .delete-btn {
   display: flex;
 }
 
-/* 삭제 버튼 호버 시 배경색*/
 .delete-btn:hover {
   background-color: var(--bg-muted);
 }
@@ -99,13 +94,13 @@
   padding: var(--gap-xxs) var(--gap-xs);
 
   /* 폰트 및 디자인 명세 */
-  font-size: var(--font-size-xs); /* 12px */
+  font-size: var(--font-size-xs);
   font-weight: 600;
-  line-height: 1; /* 내부 정렬을 위해 행간 최소화 */
-  border-radius: var(--radius-sm); /* 4px 둥근 모서리 */
+  line-height: 1;
+  border-radius: var(--radius-sm);
 
   /* 우선순위 상자  제목 사이 간격 */
-  margin-bottom: var(--gap-md); /* 16px */
+  margin-bottom: var(--gap-md);
 }
 
 /* 우선순위별 컬러 스타일 */
@@ -124,32 +119,32 @@
 
 /* 2층: 카드 제목 */
 .card__title {
-  font-size: var(--font-size-lg); /* 16px */
+  font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--text-main);
   line-height: 1.4;
   margin: 0;
-  margin-bottom: var(--gap-xs); /* 8px */
+  margin-bottom: var(--gap-xs);
 }
 
 /* 3층: 카드 본문 내용 */
 .card__content {
-  font-size: var(--font-size-md); /* 14px */
+  font-size: var(--font-size-md);
   color: var(--text-card);
   line-height: 1.5;
   margin: 0;
-  margin-bottom: var(--gap-md); /* 16px */
+  margin-bottom: var(--gap-md);
 }
 
 /* 4층: 하단 날짜 영역 */
 .card__footer {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xxs); /*6px*/
+  gap: var(--gap-xxs);
 
-  margin-top: var(--gap-md); /* 내용과 간격 띄우기 */
-  padding-top: var(--gap-md); /* 선 위쪽 여백 */
-  border-top: 0.0625rem dashed var(--border-light); /* 점선 구분선 */
+  margin-top: var(--gap-md);
+  padding-top: var(--gap-md);
+  border-top: 0.0625rem dashed var(--border-light);
 }
 
 /* 날짜 텍스트 공통 설정 */
@@ -189,11 +184,14 @@
   background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.8'%3E%3Cpath d='M2.62309 12.6784C2.27524 12.6784 1.94164 12.5402 1.69567 12.2943C1.44971 12.0483 1.31152 11.7147 1.31152 11.3669V2.62312C1.31152 2.27527 1.44971 1.94167 1.69567 1.6957C1.94164 1.44974 2.27524 1.31155 2.62309 1.31155H9.61809C9.73404 1.31155 9.84524 1.35761 9.92723 1.4396C10.0092 1.52159 10.0553 1.63279 10.0553 1.74874C10.0553 1.86469 10.0092 1.97589 9.92723 2.05788C9.84524 2.13987 9.73404 2.18593 9.61809 2.18593H2.62309C2.50714 2.18593 2.39594 2.23199 2.31395 2.31398C2.23196 2.39597 2.1859 2.50717 2.1859 2.62312V11.3669C2.1859 11.4828 2.23196 11.594 2.31395 11.676C2.39594 11.758 2.50714 11.8041 2.62309 11.8041H11.3668C11.4828 11.8041 11.594 11.758 11.676 11.676C11.758 11.594 11.804 11.4828 11.804 11.3669V6.99499C11.804 6.87904 11.8501 6.76784 11.9321 6.68585C12.0141 6.60387 12.1253 6.5578 12.2412 6.5578C12.3572 6.5578 12.4684 6.60387 12.5504 6.68585C12.6323 6.76784 12.6784 6.87904 12.6784 6.99499V11.3669C12.6784 11.7147 12.5402 12.0483 12.2943 12.2413C12.0483 12.5402 11.7147 12.6784 11.3668 12.6784H2.62309Z' fill='%2398A4B3'/%3E%3Cpath d='M7.30496 9.05329L13.4256 2.93266C13.4662 2.89201 13.4985 2.84376 13.5205 2.79065C13.5425 2.73754 13.5538 2.68062 13.5538 2.62313C13.5538 2.56565 13.5425 2.50873 13.5205 2.45562C13.4985 2.40251 13.4662 2.35425 13.4256 2.31361C13.3849 2.27296 13.3367 2.24071 13.2836 2.21872C13.2305 2.19672 13.1735 2.18539 13.1161 2.18539C13.0586 2.18539 13.0017 2.19672 12.9485 2.21872C12.8954 2.24071 12.8472 2.27296 12.8065 2.31361L6.99544 8.12558L4.68184 5.81111C4.64119 5.77046 4.59294 5.73821 4.53983 5.71622C4.48672 5.69422 4.4298 5.68289 4.37231 5.68289C4.31483 5.68289 4.2579 5.69422 4.20479 5.71622C4.15169 5.73821 4.10343 5.77046 4.06278 5.81111C4.02213 5.85175 3.98989 5.90001 3.96789 5.95312C3.94589 6.00623 3.93457 6.06315 3.93457 6.12063C3.93457 6.17812 3.94589 6.23504 3.96789 6.28815C3.98989 6.34126 4.02213 6.38951 4.06278 6.43016L6.68591 9.05329C6.72652 9.094 6.77476 9.1263 6.82788 9.14834C6.88099 9.17038 6.93793 9.18173 6.99544 9.18173C7.05294 9.18173 7.10988 9.17038 7.16299 9.14834C7.21611 9.1263 7.26435 9.094 7.30496 9.05329Z' fill='%2398A4B3'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+.card__date--updated::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M2.15 11.85L2.55 9.95L8.95 3.55L10.45 5.05L4.05 11.45L2.15 11.85Z' stroke='%2398A4B3' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.95 3.55L9.9 2.6C10.25 2.25 10.82 2.25 11.17 2.6L11.4 2.83C11.75 3.18 11.75 3.75 11.4 4.1L10.45 5.05' stroke='%2398A4B3' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
 .empty-message {
   text-align: center;
   padding: 20px;
   color: var(--text-muted);
   font-size: 14px;
-  /* 아래 속성을 추가하세요 */
   font-style: italic;
 }
