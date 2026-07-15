@@ -89,7 +89,7 @@ export function initHeader() {
   /* -------------------------------------------------- */
   /* [파트 3] 사용자 이름 상태 관리                         */
   /* -------------------------------------------------- */
-  const nameDOM = document.querySelector('.title-area .click-purple');
+  const nameDOM = document.querySelector('.title-area .click-focus');
   if (nameDOM) {
     const { nickname } = getState();
     if (nickname) nameDOM.textContent = nickname;
