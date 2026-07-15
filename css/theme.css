@@ -12,7 +12,7 @@ body.dark-mode {
   --bg-priority-mid: var(--color-gray-11); /* 중요도 중간 배경 */
   --bg-priority-low: var(--color-gray-11); /* 중요도 낮은 배경 */
   --bg-muted: var(--color-gray-12); /* 옅은 회색 배경 (지방 배경, 칩 등) */
-  --border-light: var(--color-gray-13); /* 은은한 구분선/테두리 */
+  --border-light: var(--color-brown-8); /* 은은한 구분선/테두리 */
   --border-muted: var(--color-gray-14); /* 진한 톤의 테두리 */
   --border-actice: var(--color-pink-1);
   --status-success: var(--color-green-10); /* 성공, 완료 (초록) */
@@ -21,20 +21,23 @@ body.dark-mode {
   --status-danger-dark: var(--color-red-50); /* 에러 텍스트 또는 호버용 (짙은 빨강) */
   --status-danger-bg: var(--color-red-20); /* 호버 배경 ( 다크모드용) */
   --overlay-bg: var(--color-black-40); /*모달 바깥 배경*/
-  --board-bg: var(--color-black-2);
+  --board-bg: var(--color-dark-grey);
   --btn-bg: var(--color-pink-1);
-  --card-bg: var(--color-black-55);
-  --bg-completed: var(--color-black-55);
-  --app-bg: var(--color-black-3); /* 앱 전체 배경*/
+  --card-bg: var(--color-dark-grey);
+  --bg-completed: var(--color-black-3);
+  --app-bg: var(--color-black-888); /* 앱 전체 배경*/
   --border-focus: var(--color-pink-1); /* 포커스 시 테두리 색 */
   --box-shadow-hover: var(--color-white-3); /* 호버 시 테두리 색 */
   --box-shadow-hover-dark: var(--color-white-4);
   --box-shadow-hover-layout: var(--color-white-5);
-  --background-color: var(--app-bg); /*모달 바깥 배경 테마*/
+  --background-color: var(--color-black-123); /*모달 바깥 배경 테마*/
   --background-line: var(--color-line-dark);
+  --inner-card-bg: var(--color-black-3);
+  --text-card: var(--color-gray-828);
 }
 
-body {
-  background-color: var(--background-color);
-  background-image: var(--background-line);
+body.dark-mode .stats-grid > div,
+body.dark-mode .card,
+body.dark-mode .modal-priority label {
+  border-color: transparent;
 }
