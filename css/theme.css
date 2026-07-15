@@ -1,6 +1,6 @@
 body.dark-mode {
-  --text-main: var(--color-white-6);
-  --text-muted: var(--color-black-144);
+  --text-main: var(--color-white-62); /* 기본 짙은 본문 텍스트 */
+  --text-muted: var(--color-black-144); /* 부가 설명, 날짜 등 흐린 텍스트 */
   --text-completed: var(--color-brown-8);
   --text-sub: var(--color-black-144);
   --text-primary: var(--color-pink-1);
