@@ -32,7 +32,7 @@
 }
 
 .filter:hover {
-  background-color: var(--bg-muted);
+  background-color: var(--bg-muted-hover);
   color: var(--text-main);
 }
 
@@ -64,7 +64,7 @@
 }
 
 .sort-btn:hover {
-  background-color: var(--bg-muted);
+  background-color: var(--bg-muted-hover);
   color: var(--text-main);
 }
 

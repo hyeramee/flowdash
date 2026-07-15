@@ -12,6 +12,7 @@ body.dark-mode {
   --bg-priority-mid: var(--color-gray-11); /* 중요도 중간 배경 */
   --bg-priority-low: var(--color-gray-11); /* 중요도 낮은 배경 */
   --bg-muted: var(--color-gray-12); /* 옅은 회색 배경 (지방 배경, 칩 등) */
+  --bg-muted-hover: var(--color-gray-15); /* 컨트롤 호버 전용, --bg-muted보다 옅게 */
   --border-light: var(--color-brown-8); /* 은은한 구분선/테두리 */
   --border-muted: var(--color-gray-14); /* 진한 톤의 테두리 */
   --border-actice: var(--color-pink-1);
