@@ -89,6 +89,7 @@ select {
   border-radius: var(--radius-circle);
   color: var(--text-sub);
   font-size: var(--font-size-md);
+  border: 1px solid var(--border-light);
   box-shadow: 0 1px 3px var(--box-shadow-hover-layout);
 }
 

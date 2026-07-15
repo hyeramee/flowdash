@@ -36,8 +36,6 @@ body.dark-mode {
   --text-card: var(--color-gray-828);
 }
 
-body.dark-mode .stats-grid > div,
-body.dark-mode .card,
-body.dark-mode .modal-priority label {
+body.dark-mode .card {
   border-color: transparent;
 }

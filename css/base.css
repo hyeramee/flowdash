@@ -347,7 +347,8 @@ body {
 /* 레이아웃 */
 .header-top,
 .stats-grid div,
-.controls {
+.controls, .board-column {
+  border: 1px solid var(--border-light);
   background-color: var(--card-bg);
   border-radius: var(--radius-xl);
   box-shadow: 0 1px 3px 0 var(--box-shadow-hover-layout);
