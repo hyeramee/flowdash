@@ -2,8 +2,8 @@
 
 > 공통 과제: Todo List를 넘어 칸반 대시보드
 > 팀원: 이혜란, 김영은, 박근영, 김채가
-> 저장소: [GitHub](hhttps://github.com/Naeun-K/flowdash.git)
-> 배포: [GitHub Pages](https://naeun-k.github.io/flowdash/)
+> 저장소: [GitHub]()
+> 배포: [GitHub Pages]()
 
 ---
 
