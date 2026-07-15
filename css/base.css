@@ -1,4 +1,3 @@
-/* 별명 등록하기 (디자인 토큰) */
 :root {
   /* 피그마에서 정한 색상들 */
 
@@ -81,9 +80,6 @@
   --color-gray-828: #828282;
   --color-black-123: #121313;
 
-  /*이런식으로 피그마에서 지정된 색 추가 가능,
-  color: var(--color-red-65); 이런식으로 사용 가능 */
-
   --text-main: var(--color-black-4); /* 기본 짙은 본문 텍스트 */
   --text-muted: var(--color-grey-5);
   --text-card: var(--color-grey-5);
@@ -142,33 +138,33 @@
   --radius-circle: 100px;
 
   /* 자주 쓰는 레이아웃 간격 토큰 예시 */
-  --space-4: 0.25rem; /*4px*/
-  --space-6: 0.37rem; /* 6px */
-  --space-8: 0.5rem; /* 8px */
-  --space-12: 0.75rem; /* 12px */
-  --space-14: 0.87rem; /* 14px */
-  --space-16: 1rem; /* 16px */
-  --space-20: 1.25rem; /* 20px */
-  --space-24: 1.5rem; /* 24px */
-  --space-28: 1.75rem; /* 28px */
-  --space-32: 2rem; /* 32px */
-  --space-40: 2.5rem; /* 40px */
-  --space-48: 3rem; /* 48px */
-  --space-64: 4rem; /* 64px */
+  --space-4: 0.25rem;
+  --space-6: 0.37rem;
+  --space-8: 0.5rem;
+  --space-12: 0.75rem;
+  --space-14: 0.87rem;
+  --space-16: 1rem;
+  --space-20: 1.25rem;
+  --space-24: 1.5rem;
+  --space-28: 1.75rem;
+  --space-32: 2rem;
+  --space-40: 2.5rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
 
-  --gap-xxxs: var(--space-4); /* 4px */
-  --gap-xxs: var(--space-6); /* 6px  */
-  --gap-xs: var(--space-8); /* 8px  */
-  --gap-xs-2: var(--space-12); /* 12px */
-  --gap-sm: var(--space-14); /* 14px */
-  --gap-md: var(--space-16); /* 16px */
-  --gap-md-2: var(--space-20); /* 20px */
-  --gap-lg: var(--space-24); /* 24px */
-  --gap-xl: var(--space-28); /* 28px */
-  --gap-xxl: var(--space-32); /* 32px */
-  --gap-xxxl: var(--space-40); /* 40px */
-  --gap-max: var(--space-48); /* 48px */
-  --gap-maxim: var(--space-64); /* 64px */
+  --gap-xxxs: var(--space-4);
+  --gap-xxs: var(--space-6);
+  --gap-xs: var(--space-8);
+  --gap-xs-2: var(--space-12);
+  --gap-sm: var(--space-14);
+  --gap-md: var(--space-16);
+  --gap-md-2: var(--space-20);
+  --gap-lg: var(--space-24);
+  --gap-xl: var(--space-28);
+  --gap-xxl: var(--space-32);
+  --gap-xxxl: var(--space-40);
+  --gap-max: var(--space-48);
+  --gap-maxim: var(--space-64);
 }
 
 @font-face {
@@ -228,7 +224,6 @@ body {
   background-color: var(--app-bg);
 }
 
-/* 변형(위치이동)과 그림자가 0.3초 동안 부드럽게 일어나도록 설정 */
 .hover-lift {
   transition:
     transform 0.3s ease,
@@ -236,15 +231,13 @@ body {
 }
 
 .hover-lift:hover {
-  transform: translateY(-4px); /* 위로 살짝 슬라이스 (-4px 만큼 올리기) */
+  transform: translateY(-4px);
 
-  /* 마우스를 올렸을 때 부드럽게 깔리는 은은한 네이비/그레이 톤 그림자 효과 */
   box-shadow:
     0 10px 20px var(--box-shadow-hover),
     0 4px 8px var(--box-shadow-hover-dark);
 }
 
-/* color, background-color border-color가 0.3초 동안 부드럽게 일어나도록 설정 */
 .hover {
   transition:
     color 0.3s ease,
@@ -288,15 +281,11 @@ body {
   box-shadow: 0 0 0 2px var(--box-shadow-danger-focus);
 }
 
-/* 클릭할 때 그림자 없이 위로만 살짝 들리는 공통 클래스 */
 .click-lift-pure {
-  /* 클릭했다가 뗄 때도 부드럽게 돌아오도록 애니메이션 지정 */
   transition: transform 0.2s ease;
 }
 
-/* 마우스로 꾹 클릭하고 있는 순간 (:active) */
 .click-lift-pure:active {
-  /* 위쪽(Y축)으로 4px 만큼 슥 올라갑니다 */
   transform: translateY(-4px);
 }
 
@@ -370,22 +359,17 @@ body {
   font-size: var(--font-size-xs);
 }
 
-/* =================================================== */
-/* ⚡ 다크모드 전환 시 번쩍임 방지  */
-/* =================================================== */
+/* 다크모드 전환 시 번쩍임 방지 */
 
-/* 초기 상태: 화면 전체를 투명하게 숨김 */
 body {
   opacity: 0;
 }
 
-/* 등장 상태: JS가 실행되어 theme-loaded가 붙는 순간 헤더와 보드가 동시에 노출 */
 body.theme-loaded {
   opacity: 1;
   transition: opacity 0.15s ease;
 }
 
-/* 만약 #board에 다른 파일의 트랜지션이 방해된다면 이것만 남겨두세요 */
 body.theme-loaded #board {
   opacity: 1;
   transition: opacity 0.15s ease;

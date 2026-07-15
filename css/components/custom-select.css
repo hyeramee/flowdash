@@ -1,11 +1,8 @@
-/* custom-select.css */
-
 .custom-select {
   position: relative;
   width: 100%;
 }
 
-/* 실제 select는 기능과 FormData를 위해 남기고 시각적으로만 숨김 */
 .custom-select > select {
   position: absolute;
   width: 1px;
@@ -87,7 +84,7 @@
 }
 
 .custom-select__option[aria-selected='true']::before {
-  content: "•";
+  content: '•';
   width: auto;
   height: auto;
   position: absolute;
@@ -97,8 +94,6 @@
   color: var(--text-primary);
 }
 
-
-/* 마우스 또는 키보드로 현재 살펴보는 옵션 */
 .custom-select__option:hover,
 .custom-select__option.is-focused {
   color: var(--text-primary);
@@ -106,7 +101,6 @@
   font-weight: 600;
 }
 
-/* 실제 선택된 옵션 */
 .custom-select__option[aria-selected='true'] {
   color: var(--text-primary);
   font-weight: 600;

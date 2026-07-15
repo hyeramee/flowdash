@@ -1,4 +1,3 @@
-// custom-select.js
 // 기존 select의 option을 이용해 디자인 가능한 커스텀 드롭다운을 생성하고 동기화한다.
 const customSelectInstances = new Map();
 
@@ -59,27 +58,19 @@ function createCustomSelect(selectElement) {
 
   const nativeOptions = Array.from(selectElement.options);
 
-  const customOptions = nativeOptions.map(
-    (nativeOption, index) => {
-      const customOption = document.createElement('li');
-      customOption.id = `${listId}-option-${index}`;
-      customOption.classList.add('custom-select__option');
-      customOption.setAttribute('role', 'option');
-      customOption.dataset.value = nativeOption.value;
-      customOption.textContent = nativeOption.textContent;
-      customOption.setAttribute(
-        'aria-selected',
-        String(nativeOption.selected),
-      );
-      list.append(customOption);
-      return customOption;
-    },
-  );
+  const customOptions = nativeOptions.map((nativeOption, index) => {
+    const customOption = document.createElement('li');
+    customOption.id = `${listId}-option-${index}`;
+    customOption.classList.add('custom-select__option');
+    customOption.setAttribute('role', 'option');
+    customOption.dataset.value = nativeOption.value;
+    customOption.textContent = nativeOption.textContent;
+    customOption.setAttribute('aria-selected', String(nativeOption.selected));
+    list.append(customOption);
+    return customOption;
+  });
 
-  const activeIndex = Math.max(
-    selectElement.selectedIndex,
-    0,
-  );
+  const activeIndex = Math.max(selectElement.selectedIndex, 0);
 
   const instance = {
     selectElement,
@@ -98,11 +89,7 @@ function createCustomSelect(selectElement) {
 }
 
 function syncCustomSelect(instance) {
-  const {
-    selectElement,
-    valueText,
-    customOptions,
-  } = instance;
+  const { selectElement, valueText, customOptions } = instance;
 
   const selectedOption = selectElement.selectedOptions[0];
 
@@ -111,16 +98,14 @@ function syncCustomSelect(instance) {
   customOptions.forEach((customOption) => {
     const isSelected = customOption.dataset.value === selectElement.value;
 
-    customOption.setAttribute('aria-selected', String(isSelected),);
+    customOption.setAttribute('aria-selected', String(isSelected));
   });
 
-  instance.activeIndex = Math.max( selectElement.selectedIndex, 0,);
+  instance.activeIndex = Math.max(selectElement.selectedIndex, 0);
 }
 
 function isCustomSelectOpen(instance) {
-  return (
-    instance.trigger.getAttribute('aria-expanded') === 'true'
-  );
+  return instance.trigger.getAttribute('aria-expanded') === 'true';
 }
 
 function openCustomSelect(instance) {
@@ -128,15 +113,15 @@ function openCustomSelect(instance) {
 
   instance.list.hidden = false;
 
-  instance.trigger.setAttribute('aria-expanded', 'true',);
+  instance.trigger.setAttribute('aria-expanded', 'true');
 
-  setFocusedOption(instance,instance.selectElement.selectedIndex,);
+  setFocusedOption(instance, instance.selectElement.selectedIndex);
 }
 
 function closeCustomSelect(instance) {
   instance.list.hidden = true;
 
-  instance.trigger.setAttribute('aria-expanded','false',);
+  instance.trigger.setAttribute('aria-expanded', 'false');
 
   clearFocusedOptions(instance);
 }
@@ -154,13 +139,15 @@ function clearFocusedOptions(instance) {
     customOption.classList.remove('is-focused');
   });
 
-  instance.trigger.removeAttribute('aria-activedescendant',);
+  instance.trigger.removeAttribute('aria-activedescendant');
 }
 
 function setFocusedOption(instance, index) {
   const optionCount = instance.customOptions.length;
 
-  if (optionCount === 0) {return;}
+  if (optionCount === 0) {
+    return;
+  }
 
   clearFocusedOptions(instance);
 
@@ -168,14 +155,15 @@ function setFocusedOption(instance, index) {
 
   const focusedOption = instance.customOptions[index];
 
-  if (!focusedOption) { return; }
+  if (!focusedOption) {
+    return;
+  }
 
   focusedOption.classList.add('is-focused');
 
-  instance.trigger.setAttribute( 'aria-activedescendant', focusedOption.id,
-  );
+  instance.trigger.setAttribute('aria-activedescendant', focusedOption.id);
 
-  focusedOption.scrollIntoView({ block: 'nearest',});
+  focusedOption.scrollIntoView({ block: 'nearest' });
 }
 
 function moveFocusedOption(instance, direction) {
@@ -183,9 +171,13 @@ function moveFocusedOption(instance, direction) {
 
   let nextIndex = instance.activeIndex + direction;
 
-  if (nextIndex < 0) { nextIndex = optionCount - 1; }
+  if (nextIndex < 0) {
+    nextIndex = optionCount - 1;
+  }
 
-  if (nextIndex >= optionCount) { nextIndex = 0; }
+  if (nextIndex >= optionCount) {
+    nextIndex = 0;
+  }
 
   setFocusedOption(instance, nextIndex);
 }
@@ -193,7 +185,9 @@ function moveFocusedOption(instance, direction) {
 function selectOption(instance, index) {
   const selectedCustomOption = instance.customOptions[index];
 
-  if (!selectedCustomOption) { return; }
+  if (!selectedCustomOption) {
+    return;
+  }
 
   instance.selectElement.value = selectedCustomOption.dataset.value;
 
@@ -202,7 +196,7 @@ function selectOption(instance, index) {
   instance.selectElement.dispatchEvent(
     new Event('change', {
       bubbles: true,
-    }),
+    })
   );
 
   closeCustomSelect(instance);
@@ -210,12 +204,7 @@ function selectOption(instance, index) {
 }
 
 function connectCustomSelectEvents(instance) {
-  const {
-    trigger,
-    list,
-    customOptions,
-    selectElement,
-  } = instance;
+  const { trigger, list, customOptions, selectElement } = instance;
 
   trigger.addEventListener('click', () => {
     if (isCustomSelectOpen(instance)) {
@@ -226,22 +215,21 @@ function connectCustomSelectEvents(instance) {
   });
 
   list.addEventListener('click', (event) => {
-    const clickedOption = event.target.closest( '.custom-select__option',
-    );
+    const clickedOption = event.target.closest('.custom-select__option');
 
-    if (!clickedOption) { return; }
+    if (!clickedOption) {
+      return;
+    }
 
-    const clickedIndex =
-      customOptions.indexOf(clickedOption);
+    const clickedIndex = customOptions.indexOf(clickedOption);
 
     selectOption(instance, clickedIndex);
   });
 
   customOptions.forEach((customOption, index) => {
-    customOption.addEventListener( 'mouseenter', () => {
-        setFocusedOption(instance, index);
-      },
-    );
+    customOption.addEventListener('mouseenter', () => {
+      setFocusedOption(instance, index);
+    });
   });
 
   trigger.addEventListener('keydown', (event) => {
@@ -289,10 +277,7 @@ function handleCustomSelectKeydown(event, instance) {
   if (event.key === 'End' && isOpen) {
     event.preventDefault();
 
-    setFocusedOption(
-      instance,
-      instance.customOptions.length - 1,
-    );
+    setFocusedOption(instance, instance.customOptions.length - 1);
 
     return;
   }
@@ -301,10 +286,7 @@ function handleCustomSelectKeydown(event, instance) {
     event.preventDefault();
 
     if (isOpen) {
-      selectOption(
-        instance,
-        instance.activeIndex,
-      );
+      selectOption(instance, instance.activeIndex);
     } else {
       openCustomSelect(instance);
     }
@@ -325,8 +307,7 @@ function handleCustomSelectKeydown(event, instance) {
 
 function handleDocumentClick(event) {
   customSelectInstances.forEach((instance) => {
-    const clickedInside =
-      instance.wrapper.contains(event.target);
+    const clickedInside = instance.wrapper.contains(event.target);
 
     if (!clickedInside) {
       closeCustomSelect(instance);
@@ -334,8 +315,7 @@ function handleDocumentClick(event) {
   });
 }
 
-// 외부 코드가 원본 select 값을 변경했을 때 커스텀 UI도 함께 갱신한다.
-export function setCustomSelectValue( selectElement, value,) {
+export function setCustomSelectValue(selectElement, value) {
   selectElement.value = value;
 
   const instance = customSelectInstances.get(selectElement);

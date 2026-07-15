@@ -1,4 +1,3 @@
-// modal.js
 // modal의 생성, 수정, 삭제, 초기화
 
 import { getState, setState, resetTodos } from '../state.js';
@@ -25,7 +24,6 @@ function showConfirmModal(elements) {
   document.body.classList.add('modal-open');
 }
 
-// 오버레이와 모든 모달을 숨기고 작업 중인 대상을 초기화한다.
 function closeModal(elements) {
   toggleHidden(elements.modalRoot, false);
   toggleHidden(elements.formModal, false);
@@ -37,7 +35,6 @@ function closeModal(elements) {
   confirmAction = null;
 }
 
-// 폼을 기본값으로 초기화하고 새 Todo 생성 모드로 연다.
 function openCreateModal(elements) {
   editingTodoId = null;
 
@@ -52,7 +49,6 @@ function openCreateModal(elements) {
   elements.todoForm.elements.title.focus();
 }
 
-// id에 해당하는 Todo를 찾아 기존 값을 폼에 채우고 수정 모드로 연다.
 function openEditModal(elements, todoId) {
   const todo = getState().todos.find((item) => String(item.id) === String(todoId));
 
@@ -71,7 +67,6 @@ function openEditModal(elements, todoId) {
   showFormModal(elements);
 }
 
-// 폼 입력값을 Todo 생성·수정에 사용할 객체로 변환한다.
 function getFormValues(todoForm) {
   const formData = new FormData(todoForm);
 
@@ -83,7 +78,6 @@ function getFormValues(todoForm) {
   };
 }
 
-// 폼 입력값과 현재 시각을 사용해 새 Todo 객체를 만든다.
 function createTodo(values) {
   const now = Date.now();
 
@@ -99,8 +93,6 @@ function createTodo(values) {
   };
 }
 
-// 기존 id와 createdAt을 유지하면서 입력값과 수정 시각을 반영한다.
-// 완료 상태 전환에 따라 completedAt을 설정하거나 초기화한다.
 function updateTodo(todo, values) {
   const now = Date.now();
 
@@ -122,7 +114,6 @@ function updateTodo(todo, values) {
   };
 }
 
-// 생성 모드이면 새 Todo를 추가하고, 수정 모드이면 대상 Todo를 교체한다.
 function handleFormSubmit(event, elements) {
   event.preventDefault();
 
@@ -155,7 +146,6 @@ function handleFormSubmit(event, elements) {
   closeModal(elements);
 }
 
-// 삭제 대상 id를 저장하고 개별 삭제 확인 문구로 모달을 연다.
 function openDeleteConfirm(elements, todoId) {
   confirmAction = {
     type: 'delete',
@@ -178,7 +168,6 @@ function deleteTodo(todoId) {
   });
 }
 
-// 전체 데이터 초기화 확인
 function openResetConfirm(elements) {
   confirmAction = { type: 'reset' };
 

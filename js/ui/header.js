@@ -1,10 +1,9 @@
-// 공통 전역 상태 함수와 상수를 최상단에 불러옵니다.
 import { getState, setState } from '../state.js';
 import { THEME } from '../constants.js';
 
 export function initHeader() {
   /* -------------------------------------------------- */
-  /* [가로채기] 화면이 그려지기 전에 다크모드부터 주입 */
+  /* 화면이 그려지기 전에 다크모드부터 */
   /* -------------------------------------------------- */
   const { theme } = getState();
   const isDarkTheme = theme === THEME.DARK;
@@ -34,7 +33,6 @@ export function initHeader() {
       updateIcon(true);
     }
 
-    // [보완] 클릭 리스너의 범위를 body 대신 document로 넓게 유지하되, 버블링 최적화
     document.addEventListener('click', (event) => {
       const themeToggleBtn = event.target.closest('button[aria-label="다크 모드 전환"]');
       if (!themeToggleBtn) return;
@@ -94,7 +92,6 @@ export function initHeader() {
     const { nickname } = getState();
     if (nickname) nameDOM.textContent = nickname;
 
-    // 공통 이름 저장 처리 함수
     const saveNickname = () => {
       const currentName = nameDOM.textContent.trim();
       if (currentName) {
@@ -107,11 +104,10 @@ export function initHeader() {
 
     nameDOM.addEventListener('blur', saveNickname);
 
-    // [보완] 엔터(Enter) 키 입력 시에도 포커스를 잃게 함으로써 자연스럽게 저장 유도
     nameDOM.addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
-        event.preventDefault(); // 줄바꿈 방지
-        nameDOM.blur(); // blur 이벤트를 발생시켜 saveNickname()이 자동 호출되도록 함
+        event.preventDefault();
+        nameDOM.blur();
       }
     });
   }
