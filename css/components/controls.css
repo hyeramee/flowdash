@@ -8,7 +8,10 @@
   border-radius: var(--radius-xl);
 }
 
-.search-box, .period-filter, .priority-filter, .sort-btn{
+.search-box,
+.period-filter,
+.priority-filter,
+.sort-btn {
   color: var(--text-sub);
 }
 
@@ -23,6 +26,14 @@
   padding-right: 44px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-light);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.filter:hover {
+  background-color: var(--bg-muted);
+  color: var(--text-main);
 }
 
 .search-box {
@@ -47,6 +58,14 @@
   padding: var(--gap-xs-2) var(--gap-md-2);
   border-radius: var(--radius-circle);
   border: 1px solid var(--border-light);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.sort-btn:hover {
+  background-color: var(--bg-muted);
+  color: var(--text-main);
 }
 
 .add-btn {
@@ -55,6 +74,11 @@
   background-color: var(--btn-bg);
   color: var(--text-white);
   font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: var(--btn-bg-hover);
 }
 
 select {
