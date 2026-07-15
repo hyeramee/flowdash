@@ -23,6 +23,7 @@ body.dark-mode {
   --overlay-bg: var(--color-black-40); /*모달 바깥 배경*/
   --board-bg: var(--color-dark-grey);
   --btn-bg: var(--color-pink-1);
+  --btn-bg-hover: var(--color-pink-4);
   --card-bg: var(--color-dark-grey);
   --bg-completed: var(--color-black-3);
   --app-bg: var(--color-black-888); /* 앱 전체 배경*/
