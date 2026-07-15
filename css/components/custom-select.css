@@ -39,6 +39,11 @@
   box-shadow: 0 0 0 2px var(--box-shadow-focus);
 }
 
+.custom-select__trigger:hover {
+  background-color: var(--bg-muted-hover);
+  color: var(--text-main);
+}
+
 .custom-select__list {
   position: absolute;
   top: auto;
