@@ -8,7 +8,7 @@
   flex-direction: column;
 
   padding: var(--gap-md-2);
-  background-color: var(--card-bg, #ffffff);
+  background-color: var(--inner-card-bg, #ffffff);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg, 0.5rem);
   box-shadow: 0 2px 4px var(--box-shadow-hover-layout);
@@ -28,13 +28,13 @@
   border-color: var(--text-primary);
   transform: translateY(-4px);
   box-shadow:
-  0 10px 20px rgba(27, 36, 50, 0.12),
-  0 4px 8px rgba(27, 36, 50, 0.06);
+    0 10px 20px rgba(27, 36, 50, 0.12),
+    0 4px 8px rgba(27, 36, 50, 0.06);
 }
 
 /* 가상요소로 우선순위별 카드 꾸밈 요소 추가 */
 .card::before {
-  content: "";
+  content: '';
   width: 4px;
   height: calc(100% - 40px);
   border-radius: var(--radius-md);
