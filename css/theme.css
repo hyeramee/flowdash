@@ -38,6 +38,10 @@ body.dark-mode {
   --text-card: var(--color-gray-828);
 }
 
-body.dark-mode .card {
+body.dark-mode :is(.card, .header-top, .stats-grid > div, .controls, .board-column) {
   border-color: transparent;
+}
+
+body.dark-mode .custom-select__list {
+  box-shadow: 0 2px 5px var(--box-shadow-hover);
 }

@@ -25,17 +25,6 @@
   /* 컨트롤 영역 */
 
   /* 보드 영역 */
-  #board {
-    flex-direction: row;
-    gap: var(--gap-lg);
-  }
-
-  .board-column {
-    flex: 1;
-    min-width: 20rem;
-    min-height: 40.625rem;
-    padding: var(--gap-lg);
-  }
 
   /* 모달 영역 */
   .modal {
@@ -74,6 +63,18 @@
   }
 
   /* 보드 영역 */
+    #board {
+    flex-direction: row;
+    gap: var(--gap-lg);
+  }
+
+  .board-column {
+    flex: 1;
+    min-width: 20rem;
+    min-height: 40.625rem;
+    padding: var(--gap-lg);
+  }
+
 
   /* 모달 영역 */
 }
