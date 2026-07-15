@@ -88,7 +88,7 @@ function createTodo(values) {
     status: values.status,
     priority: values.priority,
     createdAt: now,
-    updatedAt: null,
+    updatedAt: now,
     completedAt: values.status === STATUS.DONE ? now : null,
   };
 }
