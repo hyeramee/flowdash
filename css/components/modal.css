@@ -17,17 +17,17 @@ body.modal-open {
   inset: 0;
   z-index: 100;
   background-color: var(--overlay-bg, rgba(0, 0, 0, 0.40));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal {
-  margin-top: 100px;
+  width: 100%;
   background-color: var(--card-bg, #fff);
   padding: var(--gap-xxl);
   border-radius: var(--radius-xl);
-}
-
-.modal:first-child {
-  margin-bottom: 40px;
 }
 
 .modal-title {
