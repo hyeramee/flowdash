@@ -135,7 +135,7 @@
 /* 3층: 카드 본문 내용 */
 .card__content {
   font-size: var(--font-size-md); /* 14px */
-  color: var(--text-muted);
+  color: var(--text-card);
   line-height: 1.5;
   margin: 0;
   margin-bottom: var(--gap-md); /* 16px */
@@ -155,7 +155,7 @@
 /* 날짜 텍스트 공통 설정 */
 .card__date {
   font-size: var(--font-size-xs); /* 12px */
-  color: var(--text-muted);
+  color: var(--text-card);
   display: flex;
   align-items: center;
   line-height: 1.2;
