@@ -12,10 +12,15 @@ export function createCardElement(todo) {
   card.classList.add('card', `card--priority-${todo.priority}`);
   card.dataset.id = String(todo.id);
 
-  let completedDateMarkup = '';
+  let secondaryDateMarkup = '';
 
-  if (todo.status === STATUS.DONE && todo.completedAt !== null) {
-    completedDateMarkup = `<time class="card__date card__date--end">${formatCardDate(todo.completedAt)}</time>`;
+  const isCompleted = todo.status === STATUS.DONE && todo.completedAt !== null;
+  const isUpdated = todo.updatedAt != null && todo.updatedAt !== todo.createdAt;
+
+  if (isCompleted) {
+    secondaryDateMarkup = `<time class="card__date card__date--end"> ${formatCardDate(todo.completedAt)}</time>`;
+  } else if (isUpdated) {
+    secondaryDateMarkup = `<time class="card__date card__date--updated"> ${formatCardDate(todo.updatedAt)}</time>`;
   }
 
   card.innerHTML = `
@@ -32,7 +37,7 @@ export function createCardElement(todo) {
      <time class="card__date card__date--start">
     ${formatCardDate(todo.createdAt)}
     </time>
-    ${completedDateMarkup}
+    ${secondaryDateMarkup}
     </div>
   `;
 
