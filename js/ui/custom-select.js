@@ -28,7 +28,7 @@ function createCustomSelect(selectElement) {
   wrapper.classList.add('custom-select');
 
   trigger.type = 'button';
-  trigger.classList.add('custom-select__trigger');
+  trigger.classList.add('custom-select__trigger', 'click-focus');
   trigger.setAttribute('role', 'combobox');
   trigger.setAttribute('aria-haspopup', 'listbox');
   trigger.setAttribute('aria-expanded', 'false');
