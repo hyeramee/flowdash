@@ -1,6 +1,6 @@
 # 6조 핑퐁
 
-- 공통 과제: Todo List를 넘어 칸반 대시보드
+- 공통 과제: 칸반형 태스크 대시보드 제작
 - 팀원: 이혜란, 김영은, 박근영, 김채가
 - 저장소: [GitHub](https://github.com/hyeramee/flowdash#)
 - 배포: [GitHub Pages](https://hyeramee.github.io/flowdash/)
